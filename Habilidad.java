@@ -40,9 +40,23 @@ public class Habilidad{
            this.Debilidades.put("Fuego", 0.5F);
        }
    }
-
     @Override
     public String toString() {
         return this.Nombre+"\t"+this.Fuerza;
+    }
+
+    public int getFuerza(){
+       return this.Fuerza;
+    }
+
+    public float getDebilidad(String r) {
+        if (Debilidades.get(r)==null){
+            return 1F;
+        }else {
+            return Debilidades.get(r);
+        }
+    }
+    public String getNombre() {
+       return this.Nombre;
     }
 }
