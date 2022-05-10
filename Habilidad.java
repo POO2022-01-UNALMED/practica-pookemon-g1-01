@@ -17,6 +17,21 @@ public class Habilidad{
            this.EsCuracion=Boolean.FALSE;
            this.Debilidades.put("Electrico", 1.5F);
            }
+       
+       if (NombreHb=="agua lodosa"){
+           this.Nombre=NombreHb;
+           this.tipo="Agua";
+           this.Fuerza=45;
+           this.EsCuracion=Boolean.FALSE;
+           this.Debilidades.put("Electrico", 1.5F);
+       }
+       if (NombreHb=="cascada"){
+           this.Nombre=NombreHb;
+           this.tipo="Agua";
+           this.Fuerza=30;
+           this.EsCuracion=Boolean.FALSE;
+           this.Debilidades.put("Electrico", 1.5F);
+       }
        //HABILIDADES ELECTRICAS
        if (NombreHb=="Carga"){
            this.Nombre=NombreHb;
