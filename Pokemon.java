@@ -31,6 +31,8 @@ public class Pokemon {
             this.Vida=400;
             this.VidaMaxima=400;
             this.Habilidades.add(new Habilidad("chapuzon"));
+            this.Habilidades.add(new Habilidad("agua lodosa"))
+            this.Habilidades.add(new Habilidad("cascada"))
         }
         else if (NombredePokemonDefecto=="Charmander"){
             this.especie="Fuego";
