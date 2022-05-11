@@ -31,8 +31,8 @@ public class Pokemon {
             this.Vida=400;
             this.VidaMaxima=400;
             this.Habilidades.add(new Habilidad("chapuzon"));
-            this.Habilidades.add(new Habilidad("agua lodosa"))
-            this.Habilidades.add(new Habilidad("cascada"))
+            this.Habilidades.add(new Habilidad("agua lodosa"));
+            this.Habilidades.add(new Habilidad("cascada"));
         }
         else if (NombredePokemonDefecto=="Charmander"){
             this.especie="Fuego";
@@ -68,12 +68,20 @@ public class Pokemon {
     public String getNombre(){
         return this.nombre;
     }
+    public void setNombre(String nuevoNom){
+        this.nombre = nuevoNom;
+    }
+    
     public ArrayList<Habilidad> getHabilidades(){
         return this.Habilidades;
     }
     public int getVida(){
         return this.Vida;
     }
+    public void setvida(int aumento){
+        this.Vida = this.Vida + aumento;
+    }
+    
     public String getEspecie(){
         return this.especie;
     }
