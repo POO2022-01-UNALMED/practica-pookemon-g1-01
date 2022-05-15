@@ -10,9 +10,17 @@ public class Pokemon {
     private int Nivel=0;
     private int VidaMaxima;
     private int Vida;
+    private boolean bot;
+    private int NumerHabilidades;
 
 
+    public Pokemon(String NombredePokemonDefecto,boolean x){
+        this(NombredePokemonDefecto);
+        this.bot=x;
+
+    }
     public Pokemon(String NombredePokemonDefecto){
+        this.bot=false;
         if (NombredePokemonDefecto=="Pikachu"){
             this.especie="Electrico";
             this.nombre="Pikachu";
@@ -22,7 +30,7 @@ public class Pokemon {
             this.Habilidades.add(new Habilidad("Carga"));
             this.Habilidades.add(new Habilidad("Rayo"));
             this.Habilidades.add(new Habilidad("Chispa"));
-
+            this.NumerHabilidades=3;
         }
         else if (NombredePokemonDefecto=="Bulbasaur"){
             this.especie="Planta";
@@ -33,6 +41,7 @@ public class Pokemon {
             this.Habilidades.add(new Habilidad("chapuzon"));
             this.Habilidades.add(new Habilidad("agua lodosa"));
             this.Habilidades.add(new Habilidad("cascada"));
+            this.NumerHabilidades=3;
         }
         else if (NombredePokemonDefecto=="Charmander"){
             this.especie="Fuego";
@@ -45,7 +54,9 @@ public class Pokemon {
     public void lanzarHabilidad(int h,Pokemon p){
        Habilidad ha=this.Habilidades.get(h);
        System.out.println("\t\tSe Ha lanzado "+ha.getNombre()+" a "+p.getNombre());
-       p.quitarVida((int) (ha.getFuerza()*1));
+       System.out.println("\t\tLa vida de "+p.getNombre()+" a reducido "+ha.getFuerza()*ha.getDebilidad(p.getEspecie()));
+       p.quitarVida((int) (ha.getFuerza()*ha.getDebilidad(p.getEspecie())));
+
     }
     public void quitarVida(int r){
         if (this.Vida-r<=0) {
@@ -67,6 +78,10 @@ public class Pokemon {
     //getters
     public String getNombre(){
         return this.nombre;
+    }
+
+    public int getNumeroHabiidades(){
+        return this.NumerHabilidades;
     }
     public void setNombre(String nuevoNom){
         this.nombre = nuevoNom;
