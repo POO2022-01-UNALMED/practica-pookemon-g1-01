@@ -6,3 +6,10 @@ build/
 .settings
 .idea/
 *__pycache__*
+/Habilidad.class
+/POOkemon.class
+/Pokemon.class
+/out/
+/Entrenador.class
+/EntrenadorGimnasio.class
+/Gimnasio.class
