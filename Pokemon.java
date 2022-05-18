@@ -61,7 +61,7 @@ public class Pokemon {
     public void quitarVida(int r){
         if (this.Vida-r<=0) {
             this.Vida=0;
-            System.out.println("AAAAAAAAA Murio "+this.nombre);
+            System.out.println("\t\tha muerto "+this.nombre);
         }
         else{
             this.Vida = this.Vida - r;
