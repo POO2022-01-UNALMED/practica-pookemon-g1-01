@@ -49,6 +49,10 @@ public class Pokemon {
             this.NivelMaximo=40;
             this.Vida=200;
             this.VidaMaxima=200;
+            this.Habilidades.add(new Habilidad("incendio"));
+            this.Habilidades.add(new Habilidad("calor"));
+            this.Habilidades.add(new Habilidad("quemadura"));
+            this.NumerHabilidades=3;
         }
     }
     public void lanzarHabilidad(int h,Pokemon p){
