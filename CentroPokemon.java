@@ -7,14 +7,32 @@ public class CentroPokemon {
 	private boolean abierto;
 	
 	public CentroPokemon(){
-		this.Nombre = "porDefecto";
+		this.Nombre = "CentroPokemon oficial";
 		this.Personal = 0;
 		this.numPacientes = 0;
 		this.abierto = false;
 		
 		
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Bienvenido a "+this.Nombre+" Vamos a curar a tus pokemones";
+	}
+	public void SeleccionarPokemonParacurar(Entrenador e){
+
+	}
+	public String CurarPokemon(Pokemon pokemon) {
+		if (pokemon.getVida() <= 100) {
+			pokemon.setvida(100);
+		}
+		else {
+			pokemon.setvida(50);
+		}
+		return "El pokemon "+ pokemon.getNombre()+" se ha curado";
+	}
+
+
 	//metodos get, set y tostring
 	
 	public String getNombre() {
@@ -44,14 +62,5 @@ public class CentroPokemon {
 	
 	//metodo para curar un pokemon 
 	
-	public String CurarPokemon(Pokemon pokemon) {
-		if (pokemon.getVida() <= 100) {
-			pokemon.setvida(100);
-		}
-		else {
-			pokemon.setvida(50);
-		}
-		return "tu pokemon ha sanado lo suficiente";
-	}
 
 }

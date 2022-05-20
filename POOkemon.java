@@ -5,87 +5,48 @@ import java.util.Scanner;
 public class POOkemon {
 
     public static void main(String[] args){
-        int tiempoEspera=1500;
-       Scanner teclado = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
 
        String pok="░░░░╔╗\n" +"╔═╦═╣╠╦═╦══╦═╦═╦╗\n" +"║╬║╬║═╣╩╣║║║╬║║║║\n"+"║╔╩═╩╩╩═╩╩╩╩═╩╩═╝\n" +"╚╝\n";
 
-       System.out.println(pok+"\n" +
-               "Vamos a crear tu entrenador\nDigite su nombre:");
+       System.out.println(pok+"\n" +"Vamos a crear tu entrenador\nDigite su nombre:");
        String nombre=teclado.nextLine();
+       System.out.println(pok+"\n" +"Digita tu genero:\n1)Masculino \n2)Femenino");
+       String genero=teclado.nextLine();
+
       // System.out.flush();
 
-       //de aqui para abajo va a ser una prueba de CAMPO DE BATALLA
+
+
+
         Pokemon p1=new Pokemon("Pikachu");
         Pokemon p2=new Pokemon("Bulbasaur",true);
-        for(int i = 0; i <= 10; i = i + 1){
-            System.out.println();
-        }
-        int turno=1;
-            while (p2.getVida()>0 && p1.getVida()>0){
 
-                for(int i = 0; i <= 10; i = i + 1){
-                    System.out.println();
-                }
+        CentroPokemon c1=new CentroPokemon();
+        while (true) {
+            System.out.println("Digite que quieres hacer:\n" +
+                    "1)Ir a campo de Batalla \n" +
+                    "2)Ir al CentroPokemon\n"+
+                    "5)Salir");
+            int opcion= Integer.parseInt(teclado.nextLine());
+            switch (opcion){
+                case 1:
+                    CampoDeBatalla campo=new CampoDeBatalla();
+                    campo.ComenzarBatalla(p1,p2);
+                    break;
+                case 2:
+                    System.out.println(c1);
+                    System.out.println(c1.CurarPokemon(p1));
+                    System.out.println(c1.CurarPokemon(p2));
 
-                System.out.println("Turno :"+turno);
-
-                System.out.println(p1.pokvid() + " \t\t\tvs\t\t\t" + p2.pokvid());
-                System.out.println("()\t\t\t\t\t\t\t\t\t\t\t\t()");
-                ArrayList<Habilidad> Habilidades = p1.getHabilidades();
-                System.out.println("Lanzar:");
-                for (int i = 0; i<Habilidades.size(); i++) {
-                    Habilidad element = Habilidades.get(i);
-                    System.out.println(String.valueOf(i+1)+") "+element);
-                }
-                int hab= Integer.parseInt(teclado.nextLine())-1;
-                while (hab+1>p1.getNumeroHabiidades()){
-                    System.out.println("No disponible, digite otro");
-                    hab = Integer.parseInt(teclado.nextLine()) - 1;
-
-                }
-
-                p1.lanzarHabilidad(hab,p2);
-                try {
-                    Thread.sleep(tiempoEspera);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-
-                for(int i = 0; i <= 10; i = i + 1){
-                    System.out.println();
-                }
-
-                turno++;
-                //
-                //TURNO DEL BOT
-                //
-                System.out.println("Turno :"+turno);
-                System.out.println(p1.pokvid() + " \t\t\tvs\t\t\t" + p2.pokvid());
-                System.out.println("()\t\t\t\t\t\t\t\t\t\t\t\t()");
-                ArrayList<Habilidad> Habilidadesb = p2.getHabilidades();
-                System.out.println("\nEL BOT PENSANDO\n\n");
-
-                try {
-                    Thread.sleep(tiempoEspera);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                p2.lanzarHabilidad((int)(Math.random() * p2.getNumeroHabiidades()-1),p1);
-
-
-                try {
-                    Thread.sleep(tiempoEspera);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-
-
-
-
+                case 5:
+                    System.exit(0);
             }
-            //System.out.print("\n\n"+Bulbasaur);
-            //System.out.print("\n\n"+Pikachu);
+        }
+
+
+
+
 
     }
     }
