@@ -21,20 +21,46 @@ public class Pokemon {
     }
     public Pokemon(String NombredePokemonDefecto){
         this.bot=false;
+        // electricos
         if (NombredePokemonDefecto=="Pikachu"){
             this.especie="Electrico";
             this.nombre="Pikachu";
-            this.NivelMaximo=20;
+            this.NivelMaximo=100;
             this.Vida=200;
             this.VidaMaxima=200;
             this.Habilidades.add(new Habilidad("Carga"));
             this.Habilidades.add(new Habilidad("Rayo"));
+            this.Habilidades.add(new Habilidad("impactrueno"));
+            this.NumerHabilidades=3;
+        }
+        if (NombredePokemonDefecto=="Electrode"){
+            this.especie="Electrico";
+            this.nombre="Electrode";
+            this.NivelMaximo=100;
+            this.Vida=200;
+            this.VidaMaxima=200;
+            this.Habilidades.add(new Habilidad("electrocañon"));
+            this.Habilidades.add(new Habilidad("puño trueno"));
             this.Habilidades.add(new Habilidad("Chispa"));
             this.NumerHabilidades=3;
         }
-        else if (NombredePokemonDefecto=="Bulbasaur"){
-            this.especie="Planta";
-            this.nombre="Bulbasaur";
+        if (NombredePokemonDefecto=="Voltorb"){
+            this.especie="Electrico";
+            this.nombre="Voltorb";
+            this.NivelMaximo=100;
+            this.Vida=200;
+            this.VidaMaxima=200;
+            this.Habilidades.add(new Habilidad("tecno shock"));
+            this.Habilidades.add(new Habilidad("puño trueno"));
+            this.Habilidades.add(new Habilidad("Rayo"));
+            this.NumerHabilidades=3;
+        }
+        
+        
+        //acuaticos
+        else if (NombredePokemonDefecto=="Squirtle"){
+            this.especie="Agua";
+            this.nombre="Squirtle";
             this.NivelMaximo=100;
             this.Vida=400;
             this.VidaMaxima=400;
@@ -43,10 +69,35 @@ public class Pokemon {
             this.Habilidades.add(new Habilidad("cascada"));
             this.NumerHabilidades=3;
         }
+        else if (NombredePokemonDefecto=="Gyarados"){
+            this.especie="Agua";
+            this.nombre="Gyarados";
+            this.NivelMaximo=100;
+            this.Vida=200;
+            this.VidaMaxima=200;
+            this.Habilidades.add(new Habilidad("hidrocañon"));
+            this.Habilidades.add(new Habilidad("hidrobomba"));
+            this.Habilidades.add(new Habilidad("hidropulzo"));
+            this.NumerHabilidades=3;
+        }
+        else if (NombredePokemonDefecto=="Tentacool"){
+            this.especie="Agua";
+            this.nombre="Tentacool";
+            this.NivelMaximo=100;
+            this.Vida=200;
+            this.VidaMaxima=200;
+            this.Habilidades.add(new Habilidad("acua jet"));
+            this.Habilidades.add(new Habilidad("rayo burbuja"));
+            this.Habilidades.add(new Habilidad("salmuera"));
+            this.NumerHabilidades=3;
+        }
+        
+        
+        //de fuego
         else if (NombredePokemonDefecto=="Charmander"){
             this.especie="Fuego";
             this.nombre="Charmander";
-            this.NivelMaximo=40;
+            this.NivelMaximo=110;
             this.Vida=200;
             this.VidaMaxima=200;
             this.Habilidades.add(new Habilidad("incendio"));
@@ -54,6 +105,101 @@ public class Pokemon {
             this.Habilidades.add(new Habilidad("quemadura"));
             this.NumerHabilidades=3;
         }
+        else if (NombredePokemonDefecto=="Ponyta"){
+            this.especie="Fuego";
+            this.nombre="Ponyta";
+            this.NivelMaximo=110;
+            this.Vida=200;
+            this.VidaMaxima=200;
+            this.Habilidades.add(new Habilidad("llamarada"));
+            this.Habilidades.add(new Habilidad("anillo igneo"));
+            this.Habilidades.add(new Habilidad("sofoco"));
+            this.NumerHabilidades=3;
+        }
+        else if (NombredePokemonDefecto=="Magmar"){
+            this.especie="Fuego";
+            this.nombre="Magmar";
+            this.NivelMaximo=110;
+            this.Vida=200;
+            this.VidaMaxima=200;
+            this.Habilidades.add(new Habilidad("incendio"));
+            this.Habilidades.add(new Habilidad("anillo igneo"));
+            this.Habilidades.add(new Habilidad("lanzallamas"));
+            this.NumerHabilidades=3;
+        }
+        
+        //venenosos
+        else if (NombredePokemonDefecto=="Gastly"){
+            this.especie="Veneno";
+            this.nombre="Gastly";
+            this.NivelMaximo=70;
+            this.Vida=300;
+            this.VidaMaxima=300;
+            this.Habilidades.add(new Habilidad("acido"));
+            this.Habilidades.add(new Habilidad("bomba lodo"));
+            this.Habilidades.add(new Habilidad("lanzamugre"));
+            this.NumerHabilidades=3;
+        }
+        else if (NombredePokemonDefecto=="Ekans"){
+            this.especie="Veneno";
+            this.nombre="Ekans";
+            this.NivelMaximo=70;
+            this.Vida=300;
+            this.VidaMaxima=300;
+            this.Habilidades.add(new Habilidad("veneno X"));
+            this.Habilidades.add(new Habilidad("veneno Y"));
+            this.Habilidades.add(new Habilidad("bomba acida"));
+            this.NumerHabilidades=3;
+        }
+        else if (NombredePokemonDefecto=="Muk"){
+            this.especie="Veneno";
+            this.nombre="Muk";
+            this.NivelMaximo=70;
+            this.Vida=300;
+            this.VidaMaxima=300;
+            this.Habilidades.add(new Habilidad("veneno X"));
+            this.Habilidades.add(new Habilidad("bomba lodo"));
+            this.Habilidades.add(new Habilidad("bomba acida"));
+            this.Habilidades.add(new Habilidad("lanzamugre"));
+            this.NumerHabilidades=4;
+        }
+        
+        
+        //planta
+        else if (NombredePokemonDefecto=="Bulbasur"){
+            this.especie="Planta";
+            this.nombre="Bulbasur";
+            this.NivelMaximo=90;
+            this.Vida=250;
+            this.VidaMaxima=250;
+            this.Habilidades.add(new Habilidad("hoja afilada"));
+            this.Habilidades.add(new Habilidad("tormenta floral"));
+            this.Habilidades.add(new Habilidad("ciclon de hojas"));
+            this.NumerHabilidades=3;
+        }
+        else if (NombredePokemonDefecto=="Gloom"){
+            this.especie="Planta";
+            this.nombre="Gloom";
+            this.NivelMaximo=90;
+            this.Vida=250;
+            this.VidaMaxima=250;
+            this.Habilidades.add(new Habilidad("hierba lazo"));
+            this.Habilidades.add(new Habilidad("semilladora"));
+            this.Habilidades.add(new Habilidad("bomba germen"));
+            this.NumerHabilidades=3;
+        }
+        else if (NombredePokemonDefecto=="Venusaur"){
+            this.especie="Planta";
+            this.nombre="Venusaur";
+            this.NivelMaximo=90;
+            this.Vida=250;
+            this.VidaMaxima=250;
+            this.Habilidades.add(new Habilidad("hoja afilada"));
+            this.Habilidades.add(new Habilidad("semilladora"));
+            this.Habilidades.add(new Habilidad("latigo cepa"));
+            this.NumerHabilidades=3;
+        }
+        
     }
     public void lanzarHabilidad(int h,Pokemon p){
        Habilidad ha=this.Habilidades.get(h);
