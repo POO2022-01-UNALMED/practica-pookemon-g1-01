@@ -1,7 +1,11 @@
+package entrenador;
+
+import pokemon.Pokemon;
 import java.util.ArrayList;
 import java.io.*;
 
-public class Entrenador {
+public class Entrenador implements Serializable {
+	
 	private String Nombre;
 	private String Genero;
 	private int edad;
@@ -11,8 +15,8 @@ public class Entrenador {
 	
 	public Entrenador(String Nombre,String Genero,int edad,ArrayList<Pokemon> ListaPokemon, Pokemon PokemonInicial,ArrayList<String> Medallas){
 		this.Nombre = Nombre;
-		this.Genero = Genero;
-		this.edad = edad;
+		this.Genero = "M";
+		this.edad = 0;
 		this.ListaPokemon = ListaPokemon;
 		this.PokemonInicial = PokemonInicial;
 		this.Medallas = Medallas;
@@ -59,6 +63,5 @@ public class Entrenador {
 	public void CambiarInicial(Pokemon nuevoInicial) {
 		this.PokemonInicial = nuevoInicial;
 	}
-	
-	
+
 }

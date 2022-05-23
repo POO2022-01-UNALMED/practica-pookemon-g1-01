@@ -1,9 +1,12 @@
+package lugares;
+
+import pokemon.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
 
 public class CampoDeBatalla {
-    int tiempoEspera=1500;
+	int tiempoEspera=1500;
     public void ComenzarBatalla(Pokemon p1,Pokemon p2) {
         Scanner teclado = new Scanner(System.in);
         if (p1.getVida()==0 || p2.getVida()==0){
@@ -90,4 +93,4 @@ public class CampoDeBatalla {
         }
     }
 
-    }
+}

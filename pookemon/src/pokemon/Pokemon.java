@@ -1,9 +1,11 @@
-//package pookemon;
+package pokemon;
+
 import java.util.ArrayList;
 import java.io.*;
 
-public class Pokemon implements Serializable {
-    private String especie;
+public class Pokemon implements Serializable{
+	
+	private String especie;
     private String nombre;
 
     private ArrayList<Habilidad> Habilidades= new ArrayList<Habilidad>();
@@ -41,8 +43,8 @@ public class Pokemon implements Serializable {
             this.NivelMaximo=100;
             this.Vida=200;
             this.VidaMaxima=200;
-            this.Habilidades.add(new Habilidad("electrocañon"));
-            this.Habilidades.add(new Habilidad("puño trueno"));
+            this.Habilidades.add(new Habilidad("electrocaï¿½on"));
+            this.Habilidades.add(new Habilidad("puï¿½o trueno"));
             this.Habilidades.add(new Habilidad("Chispa"));
             this.NumerHabilidades=3;
         }
@@ -53,7 +55,7 @@ public class Pokemon implements Serializable {
             this.Vida=200;
             this.VidaMaxima=200;
             this.Habilidades.add(new Habilidad("tecno shock"));
-            this.Habilidades.add(new Habilidad("puño trueno"));
+            this.Habilidades.add(new Habilidad("puï¿½o trueno"));
             this.Habilidades.add(new Habilidad("Rayo"));
             this.NumerHabilidades=3;
         }
@@ -77,7 +79,7 @@ public class Pokemon implements Serializable {
             this.NivelMaximo=100;
             this.Vida=200;
             this.VidaMaxima=200;
-            this.Habilidades.add(new Habilidad("hidrocañon"));
+            this.Habilidades.add(new Habilidad("hidrocaï¿½on"));
             this.Habilidades.add(new Habilidad("hidrobomba"));
             this.Habilidades.add(new Habilidad("hidropulzo"));
             this.NumerHabilidades=3;

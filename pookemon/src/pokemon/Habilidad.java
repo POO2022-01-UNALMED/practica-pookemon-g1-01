@@ -1,9 +1,11 @@
+package pokemon;
+
 import java.util.HashMap;
 import java.io.*;
 import java.util.Map;
 
-public class Habilidad{
-    private String  Nombre;
+public class Habilidad {
+	private String  Nombre;
     private int     Fuerza;
     private String  tipo;
     private Boolean EsCuracion ;
@@ -36,7 +38,7 @@ public class Habilidad{
            this.EsCuracion=Boolean.FALSE;
            this.Debilidades.put("Electrico", 1.5F);
        }//
-       if (NombreHb=="hidrocañon"){
+       if (NombreHb=="hidrocaï¿½on"){
            this.Nombre=NombreHb;
            this.tipo="Agua";
            this.Fuerza=39;
@@ -110,14 +112,14 @@ public class Habilidad{
            this.EsCuracion=Boolean.FALSE;
            this.Debilidades.put("Fuego", 0.5F);
        }//
-       if (NombreHb=="electrocañon"){
+       if (NombreHb=="electrocaï¿½on"){
            this.Nombre=NombreHb;
            this.tipo="Electrico";
            this.Fuerza=50;
            this.EsCuracion=Boolean.FALSE;
            this.Debilidades.put("Fuego", 0.5F);
        }//
-       if (NombreHb=="puño trueno"){
+       if (NombreHb=="puï¿½o trueno"){
            this.Nombre=NombreHb;
            this.tipo="Electrico";
            this.Fuerza=41;
@@ -308,4 +310,5 @@ public class Habilidad{
     public String getNombre() {
        return this.Nombre;
     }
+
 }

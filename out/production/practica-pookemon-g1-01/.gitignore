@@ -6,7 +6,6 @@ build/
 .settings
 .idea/
 *__pycache__*
-/.gitignore
 /CampoDeBatalla.class
 /CentroPokemon.class
 /Entrenador.class
@@ -15,6 +14,4 @@ build/
 /Habilidad.class
 /POOkemon.class
 /Pokemon.class
-/README.md
 /out/
-/practica-pookemon-g1-01.iml

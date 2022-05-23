@@ -1,7 +1,12 @@
+package entrenador;
+
+import lugares.Gimnasio;
+import pokemon.Pokemon;
 import java.util.ArrayList;
 import java.io.*;
 
-public class EntrenadorGimnasio extends Entrenador {
+public class EntrenadorGimnasio extends Entrenador{
+
 	
 	private Gimnasio Gimnasio;
 
@@ -17,6 +22,5 @@ public class EntrenadorGimnasio extends Entrenador {
 	public void setGimnasio(Gimnasio nuevoGym) {
 		this.Gimnasio = nuevoGym;
 	}
-	
 
 }

@@ -1,3 +1,6 @@
+package lugares;
+
+import entrenador.*;
 import java.io.*;
 
 public class Gimnasio {
@@ -25,5 +28,5 @@ public class Gimnasio {
 	public String getPOOKEMON() {
 		return "el Pokemon inicial del Entrenador es: " + this.EntrenadorGym.getPokemonInicial();	
 	}	
-}
 
+}

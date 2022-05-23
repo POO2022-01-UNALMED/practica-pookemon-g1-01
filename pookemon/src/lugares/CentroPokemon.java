@@ -1,4 +1,7 @@
-//import practica-pookemon-g1-01.Pokemon;
+package lugares;
+
+import pokemon.*;
+import entrenador.*;
 import java.io.*;
 
 public class CentroPokemon {
