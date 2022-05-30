@@ -1,6 +1,9 @@
+package gestorAplicacion.pokemon;
+
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-public class Habilidad{
+public class Habilidad implements Serializable {
     private String  Nombre;
     private int     Fuerza;
     private String  tipo;
@@ -54,6 +57,7 @@ public class Habilidad{
            this.EsCuracion=Boolean.FALSE;
            this.Debilidades.put("Fuego", 0.5F);
        }
+       //HABILIDADES DE FUEGO
    }
     @Override
     public String toString() {

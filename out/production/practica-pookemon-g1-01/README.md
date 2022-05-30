@@ -1,4 +1,4 @@
-# Proyecto pokemon
+# Proyecto gestorAplicacion.pokemon
 ## Integrantes
 - Pablo Usuga
 - David Urrego

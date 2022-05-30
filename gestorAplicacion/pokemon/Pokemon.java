@@ -1,6 +1,9 @@
+package gestorAplicacion.pokemon;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Pokemon {
+public class Pokemon implements Serializable {
     private String especie;
     private String nombre;
 
@@ -14,6 +17,17 @@ public class Pokemon {
     private int NumerHabilidades;
 
 
+    public Pokemon(String Especie,String Nombre,String h1,String h2,String h3){
+        this.especie=Especie;
+        this.nombre=Nombre;
+        this.Habilidades.add(new Habilidad(h1));
+        this.Habilidades.add(new Habilidad(h2));
+        this.Habilidades.add(new Habilidad(h3));
+        this.NivelMaximo=20;
+        this.Vida=200;
+        this.VidaMaxima=200;
+        this.NumerHabilidades=3;
+    }
     public Pokemon(String NombredePokemonDefecto,boolean x){
         this(NombredePokemonDefecto);
         this.bot=x;

@@ -1,12 +1,17 @@
+package gestorAplicacion.lugares;
+
+import gestorAplicacion.pokemon.Habilidad;
+import gestorAplicacion.pokemon.Pokemon;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CampoDeBatalla {
-    int tiempoEspera=150;
-    public void ComenzarBatalla(Pokemon p1,Pokemon p2) {
+    int tiempoEspera=1500;
+    public void ComenzarBatalla(Pokemon p1, Pokemon p2) {
         Scanner teclado = new Scanner(System.in);
         if (p1.getVida()==0 || p2.getVida()==0){
-            System.out.println("Un pokemon no puede luchar por falta de vida");
+            System.out.println("Un gestorAplicacion.pokemon no puede luchar por falta de vida");
         }
         else{
             // COMIENZA BATALLA
@@ -36,6 +41,8 @@ public class CampoDeBatalla {
                     Habilidad element = Habilidades.get(i);
                     System.out.println(String.valueOf(i + 1) + ") " + element);
                 }
+                // EL numero de huir
+
                 int hab = Integer.parseInt(teclado.nextLine()) - 1;
                 while (hab + 1 > p1.getNumeroHabiidades()) {
                     System.out.println("No disponible, digite otro");
