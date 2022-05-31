@@ -1,64 +1,56 @@
 package uiMain;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import baseDatos.Serializador;
 
 import java.util.Random;
-import java.io.*;
 
 import gestorAplicacion.pokemon.*;
 import gestorAplicacion.lugares.*;
 import gestorAplicacion.entrenador.*;
 
 public class POOkemon {
-	static void comenzarBatalla(){} //funcionalidad 
+	//static void comenzarBatalla(){} //funcionalidad
 	
 	
 	public static void main(String[] args){
         Scanner teclado = new Scanner(System.in);
 
-       String pok="Ã¢â€“â€˜Ã¢â€“â€˜Ã¢â€“â€˜Ã¢â€“â€˜Ã¢â€¢â€�Ã¢â€¢â€”\n" +"Ã¢â€¢â€�Ã¢â€¢ï¿½Ã¢â€¢Â¦Ã¢â€¢ï¿½Ã¢â€¢Â£Ã¢â€¢Â Ã¢â€¢Â¦Ã¢â€¢ï¿½Ã¢â€¢Â¦Ã¢â€¢ï¿½Ã¢â€¢ï¿½Ã¢â€¢Â¦Ã¢â€¢ï¿½Ã¢â€¢Â¦Ã¢â€¢ï¿½Ã¢â€¢Â¦Ã¢â€¢â€”\n" +"Ã¢â€¢â€˜Ã¢â€¢Â¬Ã¢â€¢â€˜Ã¢â€¢Â¬Ã¢â€¢â€˜Ã¢â€¢ï¿½Ã¢â€¢Â£Ã¢â€¢Â©Ã¢â€¢Â£Ã¢â€¢â€˜Ã¢â€¢â€˜Ã¢â€¢â€˜Ã¢â€¢Â¬Ã¢â€¢â€˜Ã¢â€¢â€˜Ã¢â€¢â€˜Ã¢â€¢â€˜\n"+"Ã¢â€¢â€˜Ã¢â€¢â€�Ã¢â€¢Â©Ã¢â€¢ï¿½Ã¢â€¢Â©Ã¢â€¢Â©Ã¢â€¢Â©Ã¢â€¢ï¿½Ã¢â€¢Â©Ã¢â€¢Â©Ã¢â€¢Â©Ã¢â€¢Â©Ã¢â€¢ï¿½Ã¢â€¢Â©Ã¢â€¢Â©Ã¢â€¢ï¿½Ã¢â€¢ï¿½\n" +"Ã¢â€¢Å¡Ã¢â€¢ï¿½\n";
 
-       System.out.println(pok+"\n" +"Vamos a crear tu entrenador\nDigite su nombre:");
+       System.out.println("\n" +"Vamos a crear tu entrenador\nDigite su nombre:");
        String nombre=teclado.nextLine();
-       System.out.println(pok+"\n" +"Digita tu genero:");
+       System.out.println("Digita tu genero:");
        String genero=teclado.nextLine();
-       System.out.println(pok+"\n" +"Digita tu edad:");
+       System.out.println("Digita tu edad:");
        String edad=teclado.nextLine();
        System.out.println("jugador creado");
 
       // System.out.flush();
-       
        ArrayList<String> Medallas = new ArrayList<String>();
-       
        Medallas.add("canto");
        Medallas.add("paleta");
        Medallas.add("ketchub");
-       
-       ArrayList<Pokemon> ListaPookemones = new ArrayList<Pokemon>();
-       
-       ListaPookemones.add(new Pokemon("Pikachu"));
-       ListaPookemones.add(new Pokemon("Electrode"));
-       ListaPookemones.add(new Pokemon("Voltorb"));
-       ListaPookemones.add(new Pokemon("Squirtle"));
-       ListaPookemones.add(new Pokemon("Gyarados"));
-       ListaPookemones.add(new Pokemon("Tentacool"));
-       ListaPookemones.add(new Pokemon("Charmander"));
-       ListaPookemones.add(new Pokemon("Ponyta"));
-       ListaPookemones.add(new Pokemon("Magmar"));
-       ListaPookemones.add(new Pokemon("Gastly"));
-       ListaPookemones.add(new Pokemon("Ekans"));
-       ListaPookemones.add(new Pokemon("Muk"));
-       ListaPookemones.add(new Pokemon("Bulbasur"));
-       ListaPookemones.add(new Pokemon("Gloom"));
-       ListaPookemones.add(new Pokemon("Venusaur"));
-       
+
+       ArrayList<Pokemon> ListaPookemones = generar_lista();
+       System.out.println("De los siguientes pokemones:");
+       int i=0;
+       while (i < ListaPookemones.size()) {
+           System.out.print(i);
+           System.out.print(") ");
+           System.out.print(ListaPookemones.get(i).getNombre());
+           System.out.println();
+           i++;
+       }
+       System.out.println("Cual desea tener?");
+       int pokemonn= Integer.parseInt(teclado.nextLine());
+       Pokemon pokemonInicial = ListaPookemones.get(pokemonn);
+
        Random rand = new Random();
-       
-       System.out.println("///Este es tu pokemon para pelear///");
-       Pokemon pokemonInicial = ListaPookemones.get(rand.nextInt(ListaPookemones.size()));
+//     Pokemon pokemonInicial = ListaPookemones.get(rand.nextInt(ListaPookemones.size()));
+
        System.out.println(pokemonInicial);
        System.out.println("///Este es el pokemon contra el que vas a pelear///");
        Pokemon pokemonRival = ListaPookemones.get(rand.nextInt(ListaPookemones.size()));
@@ -103,13 +95,29 @@ public class POOkemon {
                 	Serializador.serializarTodo();
                     System.exit(0);
             }
-            
         }
-
-
-
-
-
     }
+
+    public static ArrayList<Pokemon> generar_lista(){
+        ArrayList<Pokemon> ListaPookemones = new ArrayList<Pokemon>();
+        ListaPookemones.add(new Pokemon("Pikachu"));
+        ListaPookemones.add(new Pokemon("Electrode"));
+        ListaPookemones.add(new Pokemon("Voltorb"));
+        ListaPookemones.add(new Pokemon("Squirtle"));
+        ListaPookemones.add(new Pokemon("Gyarados"));
+        ListaPookemones.add(new Pokemon("Tentacool"));
+        ListaPookemones.add(new Pokemon("Charmander"));
+        ListaPookemones.add(new Pokemon("Ponyta"));
+        ListaPookemones.add(new Pokemon("Magmar"));
+        ListaPookemones.add(new Pokemon("Gastly"));
+        ListaPookemones.add(new Pokemon("Ekans"));
+        ListaPookemones.add(new Pokemon("Muk"));
+        ListaPookemones.add(new Pokemon("Bulbasur"));
+        ListaPookemones.add(new Pokemon("Gloom"));
+        ListaPookemones.add(new Pokemon("Venusaur"));
+        return ListaPookemones;
+    }
+
+
 
 }
