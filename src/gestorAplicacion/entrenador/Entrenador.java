@@ -68,7 +68,10 @@ public class Entrenador implements Serializable {
 	}
 	@Override
     public String toString() {
-        return "nombre :\t"+this.Nombre+"\ngenero :\t"+this.Genero+"/"+"\nedad :\t"+this.edad+"/"+"\nPokemon inicial :\t"+this.PokemonInicial.getNombre();
+        return "nombre :\t"+this.Nombre+"\n" +
+				"genero :\t"+this.Genero+"\n" +
+				"edad :\t\t"+this.edad+"\n" +
+				"Pokemon :\t"+this.PokemonInicial.getNombre();
     }
 
 }

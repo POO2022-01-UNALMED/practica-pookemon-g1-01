@@ -228,7 +228,10 @@ public class Pokemon implements Serializable{
 
     @Override
     public String toString() {
-        return "Especie :\t" +this.especie+"\nnombre :\t"+this.nombre+"\nNivel :\t"+this.Nivel+"/"+this.NivelMaximo+"\nVida :\t"+this.Vida+"/"+this.VidaMaxima;
+        return "Especie :\t" +this.especie+"\n" +
+               "nombre :\t"+this.nombre+"\n" +
+               "Nivel :\t\t"+this.Nivel+"/"+this.NivelMaximo+"\n" +
+               "Vida :\t\t"+this.Vida+"/"+this.VidaMaxima;
     }
     //getters
     public String getNombre(){

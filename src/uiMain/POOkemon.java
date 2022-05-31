@@ -51,7 +51,6 @@ public class POOkemon {
        Random rand = new Random();
 //     Pokemon pokemonInicial = ListaPookemones.get(rand.nextInt(ListaPookemones.size()));
 
-       System.out.println(pokemonInicial);
        System.out.println("///Este es el pokemon contra el que vas a pelear///");
        Pokemon pokemonRival = ListaPookemones.get(rand.nextInt(ListaPookemones.size()));
        System.out.println(pokemonRival);
@@ -65,7 +64,7 @@ public class POOkemon {
         System.out.println("///tu perfil///");
         jugador1 = new EntrenadorGimnasio(nombre,genero,edad,ListaPookemones,pokemonInicial,Medallas,Gym);
         System.out.println(jugador1);
-        
+
         EntrenadorRoket jugadorRoket = new EntrenadorRoket(null,null,null,ListaPookemones,pokRival,null);
         
         while (true) {
@@ -73,6 +72,7 @@ public class POOkemon {
                     "1)Ir a campo de Batalla \n" +
                     "2)Ir al CentroPokemon\n"+
                     "3)Pelear contra un jugador del equipo Roket\n"+
+                    "4)Ver el estado de mi pokemon y mi perfil\n" +
                     "5)Salir");
             int opcion= Integer.parseInt(teclado.nextLine());
             switch (opcion){
@@ -90,6 +90,11 @@ public class POOkemon {
                 	CampoDeBatalla campo2=new CampoDeBatalla();
                     campo2.ComenzarBatalla(jugador1.getPokemonInicial(),jugadorRoket.getPokemonInicial());
                     break;
+                case 4:
+                    System.out.println("Veamos su perfil de Pokemon:");
+                    System.out.println(pokemonInicial);
+                    System.out.println("\n\nVeamos su perfil de Entrenador:");
+                    System.out.println(jugador1);
 
                 case 5:
                 	Serializador.serializarTodo();
