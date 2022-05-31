@@ -15,27 +15,21 @@ public class CampoDeBatalla {
         else{
             // COMIENZA BATALLA
 
-            try {
-                Thread.sleep(tiempoEspera);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+           tespe();
             for(int i = 0; i <= 10; i = i + 1){
                 System.out.println();
             }
             int turno=1;
+
+            String titulo;
             while (p2.getVida()>0 && p1.getVida()>0) {
 
                 for (int i = 0; i <= 10; i = i + 1) {
                     System.out.println();
                 }
-
-                System.out.println("Turno :" + turno);
-
-                System.out.println(p1.pokvid() + " \t\t\tvs\t\t\t" + p2.pokvid());
-                System.out.println("()\t\t\t\t\t\t\t\t\t\t\t\t()");
+                titulo="Turno :" + turno + "\n" + p1.pokvid() + " \t\t\tvs\t\t\t" + p2.pokvid() + "\n"+ "()\t\t\t\t\t\t\t\t\t\t\t\t() ";
+                System.out.println(titulo+"\n Lanzar:");
                 ArrayList<Habilidad> Habilidades = p1.getHabilidades();
-                System.out.println("Lanzar:");
                 for (int i = 0; i < Habilidades.size(); i++) {
                     Habilidad element = Habilidades.get(i);
                     System.out.println(String.valueOf(i + 1) + ") " + element);
@@ -48,49 +42,66 @@ public class CampoDeBatalla {
                 }
 
                 p1.lanzarHabilidad(hab, p2);
-                try {
-                    Thread.sleep(tiempoEspera);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+                tespe();
 
                 for (int i = 0; i <= 10; i = i + 1) {
                     System.out.println();
                 }
 
                 turno++;
-                //
-                //TURNO DEL BOT
-                //
-                System.out.println("Turno :" + turno);
-                System.out.println(p1.pokvid() + " \t\t\tvs\t\t\t" + p2.pokvid());
-                System.out.println("()\t\t\t\t\t\t\t\t\t\t\t\t()");
-                ArrayList<Habilidad> Habilidadesb = p2.getHabilidades();
-                System.out.println("\nEL BOT PENSANDO\n\n");
-
-                try {
-                    Thread.sleep(tiempoEspera);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                if (verificarvidas(p1,p2)!=""){
+                    System.out.println(verificarvidas(p1,p2));
+                    tespe();
+                    break;
                 }
+                turno++;
+                titulo="Turno :" + turno + "\n" + p1.pokvid() + " \t\t\tvs\t\t\t" + p2.pokvid() + "\n"+ "()\t\t\t\t\t\t\t\t\t\t\t\t() ";
+                System.out.println(titulo);
+                tespe();
+                System.out.println("El bot lanzar�");
+                ArrayList<Habilidad> Habilidadesb = p2.getHabilidades();
+
+
                 p2.lanzarHabilidad((int) (Math.random() * p2.getNumeroHabiidades() - 1), p1);
 
-
-                try {
-                    Thread.sleep(tiempoEspera);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
-                if (p1.getVida()==0 || p2.getVida()==0){
-                    System.out.println("\nHA TERMINADO LA PELEA\n\n");
-                    try {
-                        Thread.sleep(tiempoEspera);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
+                tespe();
+                if (verificarvidas(p1,p2)!=""){
+                    System.out.println(verificarvidas(p1,p2));
+                    tespe();
+                    break;
                 }
             }
         }
     }
+    public void tespe(){
+        try {
+            Thread.sleep(tiempoEspera);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public String verificarvidas(Pokemon p1,Pokemon p2){
+        if (p1.getVida()==0 || p2.getVida()==0){
+            String[] a1 = new String[1];
+
+            if (p1.getVida()==0){
+                a1[0]=p2.getNombre();
+            }
+            else if (p2.getVida()==0){
+                a1[0]=p1.getNombre();
+            }
+
+            return "\nHA TERMINADO LA PELEA\n El ganador ha sido "+a1[0]+"\n";
+        }
+        else{
+            return "";
+
+        }
+    }
+
+
+
+
+
 
 }
