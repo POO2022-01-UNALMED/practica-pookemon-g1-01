@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gestorAplicacion.entrenador.Entrenador;
+import gestorAplicacion.entrenador.EntrenadorGimnasio;
 
 
 
@@ -59,5 +60,6 @@ public class Deserializador {
 	 */
 	public static void deserializarTodo() {
 		Deserializador.deserializador(Entrenador.entrenadores, "Entrenadores");
+		Deserializador.deserializador(EntrenadorGimnasio.entrenadoresGym, "Entrenadores de gimnasio");
 	}
 }

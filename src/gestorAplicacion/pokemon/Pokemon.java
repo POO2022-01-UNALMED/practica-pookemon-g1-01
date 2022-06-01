@@ -231,7 +231,8 @@ public class Pokemon implements Serializable{
         return "Especie :\t" +this.especie+"\n" +
                "nombre :\t"+this.nombre+"\n" +
                "Nivel :\t\t"+this.Nivel+"/"+this.NivelMaximo+"\n" +
-               "Vida :\t\t"+this.Vida+"/"+this.VidaMaxima;
+               "Vida :\t\t"+this.Vida+"/"+this.VidaMaxima 
+               + "\n";
     }
     //getters
     public String getNombre(){

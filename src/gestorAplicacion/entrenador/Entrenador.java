@@ -67,13 +67,18 @@ public class Entrenador implements Serializable {
 	public void CambiarInicial(Pokemon nuevoInicial) {
 		this.PokemonInicial = nuevoInicial;
 	}
+	
+	public static ArrayList<Entrenador> getEntrenadores(){
+		return entrenadores;
+	}
+	
 	@Override
     public String toString() {
         return "nombre :\t"+this.Nombre+"\n" +
 				"genero :\t"+this.Genero+"\n" +
 				"edad :\t\t"+this.edad+"\n" +
 				"Pokemon :\t"+this.PokemonInicial.getNombre()+"\n" +
-				"vestimenta :\t"+ Entrenador.Vestimenta ;
+				"vestimenta :\t"+ Entrenador.Vestimenta + "\n" ;
     }
 
 }

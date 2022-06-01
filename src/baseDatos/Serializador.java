@@ -53,5 +53,6 @@ public class Serializador {
 	 */
 	public static void serializarTodo() {
 		Serializador.serializar(Entrenador.entrenadores, "Entrenadores");
+		Serializador.serializar(EntrenadorGimnasio.entrenadoresGym, "Entrenadores de gimnasio");
 	}
 }

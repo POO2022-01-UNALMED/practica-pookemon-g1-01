@@ -10,6 +10,7 @@ public class EntrenadorGimnasio extends Entrenador implements Serializable{
 	
 	private Gimnasio Gimnasio;
 	private static final long serialVersionUID = 1L;
+	public static ArrayList<Entrenador> entrenadoresGym = new ArrayList<Entrenador>() ;
 
 	public EntrenadorGimnasio(String Nombre,String Genero,String edad,ArrayList<Pokemon> ListaPokemon, Pokemon PokemonInicial,ArrayList<String> Medallas,Gimnasio Gym) {
 		super(Nombre, Genero, edad, ListaPokemon, PokemonInicial, Medallas);
@@ -22,6 +23,18 @@ public class EntrenadorGimnasio extends Entrenador implements Serializable{
 	}
 	public void setGimnasio(Gimnasio nuevoGym) {
 		this.Gimnasio = nuevoGym;
+	}
+	public static ArrayList<Entrenador> getEntrenadoresGym(){
+		return entrenadoresGym;
+	}
+	
+	public String toString() {
+		return "nombre :\t"+super.getNombre()+"\n" +
+				"genero :\t"+super.getGenero()+"\n" +
+				"edad :\t\t"+super.getedad()+"\n" +
+				"Pokemon :\t"+super.getPokemonInicial().getNombre()+"\n" +
+				"medallas :\t"+ super.getMedallas()+"\n" +
+				"gimnasio :\t"+ this.Gimnasio.getNombre() + "\n";
 	}
 
 }

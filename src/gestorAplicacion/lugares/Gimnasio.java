@@ -3,10 +3,11 @@ package gestorAplicacion.lugares;
 import gestorAplicacion.entrenador.*;
 import java.io.*;
 
-public class Gimnasio{
+public class Gimnasio implements Serializable{
 	
 	private String Nombre;
 	private EntrenadorGimnasio EntrenadorGym;
+	private static final long serialVersionUID = 1L;
 	
 	public Gimnasio(EntrenadorGimnasio EntrenadorGym) {
 		this.Nombre = "LaNacho";
