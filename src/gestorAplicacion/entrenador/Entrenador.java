@@ -7,6 +7,7 @@ import java.io.*;
 public class Entrenador implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	private static String Vestimenta = "pantalon corto negro, camisa negra y zapatos negros";
 	private String Nombre;
 	private String Genero;
 	private String edad;
@@ -71,7 +72,8 @@ public class Entrenador implements Serializable {
         return "nombre :\t"+this.Nombre+"\n" +
 				"genero :\t"+this.Genero+"\n" +
 				"edad :\t\t"+this.edad+"\n" +
-				"Pokemon :\t"+this.PokemonInicial.getNombre();
+				"Pokemon :\t"+this.PokemonInicial.getNombre()+"\n" +
+				"vestimenta :\t"+ Entrenador.Vestimenta ;
     }
 
 }

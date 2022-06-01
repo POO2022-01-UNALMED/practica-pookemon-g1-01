@@ -77,6 +77,8 @@ public class POOkemon {
             int opcion= Integer.parseInt(teclado.nextLine());
             switch (opcion){
                 case 1:
+                	System.out.println(Gym.getEGym());
+                	System.out.println(Gym.getPOOKEMON());
                     CampoDeBatalla campo=new CampoDeBatalla();
                     campo.ComenzarBatalla(jugador1.getPokemonInicial(),pokRival);
                     break;

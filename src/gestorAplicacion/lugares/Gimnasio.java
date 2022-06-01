@@ -3,7 +3,7 @@ package gestorAplicacion.lugares;
 import gestorAplicacion.entrenador.*;
 import java.io.*;
 
-public class Gimnasio implements Serializable{
+public class Gimnasio{
 	
 	private String Nombre;
 	private EntrenadorGimnasio EntrenadorGym;
@@ -20,7 +20,7 @@ public class Gimnasio implements Serializable{
 		this.Nombre = nuevoNombre;
 	}
 	public String getEGym() {
-		return "el entrenador de este gimnasio es: " + this.EntrenadorGym.getNombre();
+		return "el entrenador de" + this.getNombre() + "es: " + this.EntrenadorGym.getNombre();
 	}
 	public void setEGym(EntrenadorGimnasio nuevoEntrenador) {
 		this.EntrenadorGym = nuevoEntrenador;
