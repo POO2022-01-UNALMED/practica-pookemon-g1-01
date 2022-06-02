@@ -70,12 +70,14 @@ public class POOkemon {
 	       int pokemonn= Integer.parseInt(teclado.nextLine());
 	       Pokemon pokemonInicial = ListaPookemones.get(pokemonn);
 	       
-	       
-	        EntrenadorGimnasio jugador1 = null;
+	       	 
+	        EntrenadorGimnasio jugador1 = new EntrenadorGimnasio(nombre,genero,edad,ListaPookemones,pokemonInicial,Medallas,null);
 	        Gimnasio Gym = new Gimnasio(jugador1);
 	        
+	        jugador1.setGimnasio(Gym);
+	        
 	        System.out.println("///tu perfil///\n");
-	        jugador1 = new EntrenadorGimnasio(nombre,genero,edad,ListaPookemones,pokemonInicial,Medallas,Gym);
+	        //jugador1 = new EntrenadorGimnasio(nombre,genero,edad,ListaPookemones,pokemonInicial,Medallas,Gym);
 	        System.out.println(jugador1);
 	        
 	        return jugador1;
@@ -85,16 +87,15 @@ public class POOkemon {
 	public static void leerEntrenadores(){
 		Deserializador.deserializarTodo();
 		System.out.println("entrenadortes que pertenecen a un gimnasio");
-		System.out.println(EntrenadorGimnasio.getEntrenadoresGym());
-		for (Entrenador entrenador: EntrenadorGimnasio.getEntrenadoresGym()) {
+		for (EntrenadorGimnasio entrenador: EntrenadorGimnasio.getEntrenadoresGym()) {
 			System.out.println(entrenador);
 		}
 		System.out.println("\n");
 		System.out.println("entrenadortes sin gimnasio");
-		System.out.println(Entrenador.getEntrenadores());
 		for (Entrenador entrenador: Entrenador.getEntrenadores()) {
 			System.out.println(entrenador);
 		}
+		System.out.println("\n");
 	}
 	
 	

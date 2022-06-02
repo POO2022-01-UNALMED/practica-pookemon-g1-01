@@ -206,6 +206,8 @@ public class Pokemon implements Serializable{
         }
         
     }
+    
+    
     public void lanzarHabilidad(int h,Pokemon p){
        Habilidad ha=this.Habilidades.get(h);
        System.out.println("\t\tSe Ha lanzado "+ha.getNombre()+" a "+p.getNombre());

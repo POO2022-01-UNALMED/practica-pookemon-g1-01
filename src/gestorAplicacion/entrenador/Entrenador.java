@@ -14,7 +14,10 @@ public class Entrenador implements Serializable {
 	private ArrayList<Pokemon> ListaPokemon = new ArrayList<Pokemon>();
 	private Pokemon PokemonInicial;
 	private ArrayList<String> Medallas = new ArrayList<String>();
-	public static ArrayList<Entrenador> entrenadores = new ArrayList<Entrenador>() ;
+	public static ArrayList<Entrenador> entrenadores; // = new ArrayList<Entrenador>() ;
+	static {
+		entrenadores = new ArrayList<Entrenador>();
+	}
 	
 	public Entrenador(String Nombre,String Genero,String edad,ArrayList<Pokemon> ListaPokemon, Pokemon PokemonInicial,ArrayList<String> Medallas){
 		this.Nombre = Nombre;
@@ -23,8 +26,10 @@ public class Entrenador implements Serializable {
 		this.ListaPokemon = ListaPokemon;
 		this.PokemonInicial = PokemonInicial;
 		this.Medallas = Medallas;
-		entrenadores.add(this);
+		if (this instanceof Entrenador && !(this instanceof EntrenadorGimnasio) && !(this instanceof EntrenadorRoket)) {
+			entrenadores.add(this);
 		}
+	}
 	
 	//metodos get, set y tostring
 	

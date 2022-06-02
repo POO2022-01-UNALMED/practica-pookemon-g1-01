@@ -6,8 +6,8 @@ import java.io.*;
 public class Gimnasio implements Serializable{
 	
 	private String Nombre;
-	private EntrenadorGimnasio EntrenadorGym;
 	private static final long serialVersionUID = 1L;
+	private EntrenadorGimnasio EntrenadorGym;
 	
 	public Gimnasio(EntrenadorGimnasio EntrenadorGym) {
 		this.Nombre = "LaNacho";
@@ -28,6 +28,9 @@ public class Gimnasio implements Serializable{
 	}
 	public String getPOOKEMON() {
 		return "el Pokemon inicial del Entrenador es: " + this.EntrenadorGym.getPokemonInicial();	
-	}	
+	}
+	public EntrenadorGimnasio getEntrenador() {
+		return this.EntrenadorGym;
+	}
 
 }
