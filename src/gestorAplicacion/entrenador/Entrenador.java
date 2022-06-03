@@ -4,7 +4,28 @@ import gestorAplicacion.pokemon.Pokemon;
 import java.util.ArrayList;
 import java.io.*;
 
+/**
+ * Se utiliza para crear objetos del tipo entrenador con el cual lucharemos
+ * 
+ * @author David Urrego 
+ * @author Pablo Usuga
+ */
+
 public class Entrenador implements Serializable {
+	
+	/*creamos un objeto Entrenador e implementamos el serializable
+	 * 
+	 * @param Vestimenta  estos son atributos de la clase
+	 * @param Nombre  estos son atributos de la clase
+	 * @param Genero  estos son atributos de la clase
+	 * @param edad   estos son atributos de la clase
+	 * @param ListaPokemon lista de objetos tipo pokemon
+	 * @param PokemonInicial un objeto de la lista anterior
+	 * @param Medallas una lista de Strings
+	 * @param entrenadores una lista de todos los objetos Entrenador creados,
+	 * 		  hace posible la serializacion
+	 * @param serialVersionUID hace posible la serializacion
+	 */
 	
 	private static final long serialVersionUID = 1L;
 	private static String Vestimenta = "pantalon corto negro, camisa negra y zapatos negros";
@@ -20,6 +41,7 @@ public class Entrenador implements Serializable {
 	}
 	
 	public Entrenador(String Nombre,String Genero,String edad,ArrayList<Pokemon> ListaPokemon, Pokemon PokemonInicial,ArrayList<String> Medallas){
+		//se crea un objeto del tipo entrenador  y se almacena
 		this.Nombre = Nombre;
 		this.Genero = Genero;
 		this.edad = edad;
@@ -31,7 +53,7 @@ public class Entrenador implements Serializable {
 		}
 	}
 	
-	//metodos get, set y tostring
+	//metodos get y set
 	
 	public String getNombre() {
 		return this.Nombre;
@@ -70,15 +92,18 @@ public class Entrenador implements Serializable {
 	//motodos especiales
 	
 	public void CambiarInicial(Pokemon nuevoInicial) {
+		//cambia el pokemon inicial
 		this.PokemonInicial = nuevoInicial;
 	}
 	
 	public static ArrayList<Entrenador> getEntrenadores(){
+		//devuelve la lista de entrenadores que se han creado, esto con el fin de serializar
 		return entrenadores;
 	}
 	
 	@Override
     public String toString() {
+		//metodo toString
         return "nombre :\t"+this.Nombre+"\n" +
 				"genero :\t"+this.Genero+"\n" +
 				"edad :\t\t"+this.edad+"\n" +

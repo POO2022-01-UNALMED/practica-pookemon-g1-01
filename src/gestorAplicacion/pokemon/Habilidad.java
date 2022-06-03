@@ -4,7 +4,27 @@ import java.util.HashMap;
 import java.io.*;
 import java.util.Map;
 
+/**
+ * Se crean varias habilidades que pueden usar los pokemones
+ * 
+ * @author David Urrego 
+ * @author Pablo Usuga
+ */
+
 public class Habilidad implements Serializable{
+	
+	/**
+	 * se crea un objeto del tipo Habilidad y se emplea la seriabilizacion
+	 * para permitir que un objeto del tipo Pokemon se seriabilice 
+	 * de manera correcta
+	 * 
+	 * @param Nombre nombre del pokemon
+	 * @param Fuerza la fuerza del ataque
+	 * @param serialVersionUID permite la seriabilizacion
+	 * @param tipo el tipo del ataque
+	 * @param EsCuracion si la habilidad sana 
+	 * @param Debilidades es poco efectivo para ese tipo de pokemon
+	 */
 	
 	private static final long serialVersionUID = 1L;
 	private String  Nombre;
@@ -15,7 +35,7 @@ public class Habilidad implements Serializable{
 
 
    public Habilidad(String NombreHb){
-	   
+	   //metodo constructor
 	   
        //HABILIDADES DE AGUA
        if (NombreHb=="chapuzon"){
@@ -295,9 +315,11 @@ public class Habilidad implements Serializable{
    }
     @Override
     public String toString() {
+    	// metodo toString
         return this.Nombre+"\t"+this.Fuerza;
     }
-
+    
+    //metodos get
     public int getFuerza(){
        return this.Fuerza;
     }
