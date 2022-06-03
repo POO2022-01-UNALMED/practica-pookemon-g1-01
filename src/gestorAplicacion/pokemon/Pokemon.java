@@ -254,6 +254,9 @@ public class Pokemon implements Serializable{
     public int getVida(){
         return this.Vida;
     }
+    public int getVidaMaxima(){
+        return this.VidaMaxima;
+    }
     public void setvida(int aumento){
         this.Vida = this.Vida + aumento;
     }

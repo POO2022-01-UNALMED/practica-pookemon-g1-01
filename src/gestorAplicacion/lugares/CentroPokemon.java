@@ -27,11 +27,8 @@ public class CentroPokemon {
 
 	}
 	public String CurarPokemon(Pokemon pokemon) {
-		if (pokemon.getVida() <= 100) {
-			pokemon.setvida(100);
-		}
-		else {
-			pokemon.setvida(50);
+		if (pokemon.getVida() < pokemon.getVidaMaxima()) {
+			pokemon.setvida(pokemon.getVidaMaxima());
 		}
 		return "El pokemon "+ pokemon.getNombre()+" se ha curado";
 	}
