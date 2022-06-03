@@ -58,7 +58,7 @@ public class POOkemon {
 		//metodo para crear el personaje con el que se va jugar
 		
 		Scanner teclado = new Scanner(System.in);
-
+		//una entrada 
 
 	       System.out.println("\n" +"Vamos a crear tu entrenador\nDigite su nombre:");
 	       String nombre=teclado.nextLine();
@@ -68,13 +68,20 @@ public class POOkemon {
 	       String edad=teclado.nextLine();
 	       System.out.println("jugador creado\n");
 
-	      // System.out.flush();
-	       ArrayList<String> Medallas = new ArrayList<String>();
+	      //solo estamos recibiendo entradas y guardandolas en variables
+	       
+	       ArrayList<String> Medallas = new ArrayList<String>(); //definimos una lista de Strings
 	       Medallas.add("canto");
 	       Medallas.add("paleta");
 	       Medallas.add("ketchub");
-
-	       ArrayList<Pokemon> ListaPookemones = generar_lista();
+	       
+	       
+	       /**
+	        * generamos una lista de pokemones y le damos a escoger al 
+	        * usuarion entre estos pokemones quiere pelear
+	        * e instanciarlo en el jugado 
+	        */
+	       ArrayList<Pokemon> ListaPookemones = generar_lista(); 
 	       System.out.println("De los siguientes pokemones:\n");
 	       int i=0;
 	       while (i < ListaPookemones.size()) {
@@ -88,16 +95,17 @@ public class POOkemon {
 	       int pokemonn= Integer.parseInt(teclado.nextLine());
 	       Pokemon pokemonInicial = ListaPookemones.get(pokemonn);
 	       
-	       	 
+	       	 /**
+	       	  * se creal el jugador propiamente dicho, haciendo uso de lo que se ingreso por teclado
+	       	  */
 	        EntrenadorGimnasio jugador1 = new EntrenadorGimnasio(nombre,genero,edad,ListaPookemones,pokemonInicial,Medallas,null);
 	        Gimnasio Gym = new Gimnasio(jugador1);
 	        
 	        jugador1.setGimnasio(Gym);
 	        
 	        System.out.println("///tu perfil///\n");
-	        //jugador1 = new EntrenadorGimnasio(nombre,genero,edad,ListaPookemones,pokemonInicial,Medallas,Gym);
 	        System.out.println(jugador1);
-	        
+	        //devuelve el jugador
 	        return jugador1;
 	}
 	
@@ -127,14 +135,19 @@ public class POOkemon {
       
 		Random rand = new Random();
 
-	    CentroPokemon c1=new CentroPokemon();
+	    CentroPokemon c1=new CentroPokemon(); //se crea un CentroPokemon
 	        
-        EntrenadorRoket jugadorRoket = new EntrenadorRoket(null,null,null,generar_lista(),generar_lista().get(rand.nextInt(generar_lista().size())),null);
+        EntrenadorRoket jugadorRoket = new EntrenadorRoket(null,null,null,generar_lista(),generar_lista().get(rand.nextInt(generar_lista().size())),null); 
+        //se crea un enemigo del tipo EntrenadorRoket
         
         System.out.println("primero debes crear un entrenador\n");
     	EntrenadorGimnasio jugador = CrearEntrenador();
     	
-    	Pokemon pokRival = PokemonRival();
+    	Pokemon pokRival = PokemonRival(); //se crea un pokemon contra el se luchara 
+    	
+    	/**
+    	 * importante alcarar que el pokemon del EntrenadorRoket y el pokRival son diferentes
+    	 */
         
         while (true) {
             System.out.println("Digite que quieres hacer:\n" +
@@ -147,6 +160,8 @@ public class POOkemon {
             int opcion= Integer.parseInt(teclado.nextLine());
             switch (opcion){
                 case 1:
+                	// la primera opcion es para pelear contra pokRival
+                	
 					CampoDeBatalla cb1 = new CampoDeBatalla();
 
 
@@ -215,11 +230,15 @@ public class POOkemon {
 					cb1.seguirturno();
 					break;
                 case 2:
+                	//la segunda opcion es para curar pokemones
+                	
                     System.out.println(c1);
                     System.out.println(c1.CurarPokemon(jugador.getPokemonInicial()));
                     System.out.println(c1.CurarPokemon(pokRival));
                     break;
                 case 3:
+                	//la tercera opcion es para pelear con un EntrenadorRoket
+                	
                 	System.out.println(jugadorRoket);
                 	CampoDeBatalla cb2=new CampoDeBatalla();
                 	
@@ -289,6 +308,8 @@ public class POOkemon {
 					cb2.seguirturno();
                     break;
                 case 4:
+                	//la cuarta opcion es para ver mi perfil de jugador y conocer el estado de mi pokemon
+                	
                     System.out.println("Veamos su perfil de Pokemon:");
                     System.out.println(jugador.getPokemonInicial());
                     System.out.println("\n\nVeamos su perfil de Entrenador:");
@@ -296,9 +317,11 @@ public class POOkemon {
                     break;
 
                 case 5:
+                	//lee un historial que posee objetos del tipo entrenador y EntrenadorGimnasio
                 	leerEntrenadores();
                 	break;
                 case 6:
+                	//se sale del programa
                 	Serializador.serializarTodo();
                     System.exit(0);
             }
