@@ -109,6 +109,18 @@ public class POOkemon {
 	        return jugador1;
 	}
 	
+	public static EntrenadorRoket rivalRoket() {
+		/**
+		 * metodo para crear un rival "humano" del equipo roket, se deja asi con el fin de una posible mejora en el futuro
+		 */
+		
+		Random rand = new Random();
+		EntrenadorRoket EntrenadorRoket = new EntrenadorRoket(null,null,null,generar_lista(),generar_lista().get(rand.nextInt(generar_lista().size())),null);
+		
+		return EntrenadorRoket;
+				
+	}
+	
 	
 	public static void leerEntrenadores(){
 		//metodo para deserializar y leer los objetos que ya se han creado con antelacion
@@ -137,7 +149,7 @@ public class POOkemon {
 
 	    CentroPokemon c1=new CentroPokemon(); //se crea un CentroPokemon
 	        
-        EntrenadorRoket jugadorRoket = new EntrenadorRoket(null,null,null,generar_lista(),generar_lista().get(rand.nextInt(generar_lista().size())),null); 
+        EntrenadorRoket jugadorRoket = rivalRoket(); 
         //se crea un enemigo del tipo EntrenadorRoket
         
         System.out.println("primero debes crear un entrenador\n");
