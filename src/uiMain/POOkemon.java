@@ -196,7 +196,7 @@ public class POOkemon {
 
 							}
 
-							p1.lanzarHabilidad(hab, p2);
+							System.out.println(p1.lanzarHabilidad(hab, p2));
 							cb1.tespe();
 
 							for (int i = 0; i <= 10; i = i + 1) {
@@ -211,12 +211,12 @@ public class POOkemon {
 							cb1.seguirturno();
 							titulo="Turno :" + cb1.getturno() + "\n" + p1.pokvid() + " \t\t\tvs\t\t\t" + p2.pokvid() + "\n"+ "()\t\t\t\t\t\t\t\t\t\t\t\t() ";
 							System.out.println(titulo);
-							cb1.tespe();
 							System.out.println("El bot lanzar�");
+							cb1.tespe();
 							ArrayList<Habilidad> Habilidadesb = p2.getHabilidades();
 
 
-							p2.lanzarHabilidad((int) (Math.random() * p2.getNumeroHabiidades() - 1), p1);
+							System.out.println(p2.lanzarHabilidad((int) (Math.random() * p2.getNumeroHabiidades() - 1), p1));
 
 							cb1.tespe();
 							if (cb1.verificarvidas(p1,p2)!=""){
@@ -274,7 +274,7 @@ public class POOkemon {
 
 							}
 
-							p3.lanzarHabilidad(hab, p4);
+							System.out.println(p3.lanzarHabilidad(hab, p4));
 							cb2.tespe();
 
 							for (int i = 0; i <= 10; i = i + 1) {
@@ -289,12 +289,12 @@ public class POOkemon {
 							cb2.seguirturno();
 							titulo="Turno :" + cb2.getturno() + "\n" + p3.pokvid() + " \t\t\tvs\t\t\t" + p4.pokvid() + "\n"+ "()\t\t\t\t\t\t\t\t\t\t\t\t() ";
 							System.out.println(titulo);
-							cb2.tespe();
 							System.out.println("El bot lanzar�");
+							cb2.tespe();
 							ArrayList<Habilidad> Habilidadesb = p4.getHabilidades();
 
 
-							p4.lanzarHabilidad((int) (Math.random() * p4.getNumeroHabiidades() - 1), p3);
+							System.out.println(p4.lanzarHabilidad((int) (Math.random() * p4.getNumeroHabiidades() - 1), p3));
 
 							cb2.tespe();
 							if (cb2.verificarvidas(p3,p4)!=""){

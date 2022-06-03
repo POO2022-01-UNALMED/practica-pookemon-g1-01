@@ -234,24 +234,25 @@ public class Pokemon implements Serializable{
     }
     
     
-    public void lanzarHabilidad(int h,Pokemon p){
+    public String lanzarHabilidad(int h,Pokemon p){
     	//lanza la habilidad escogida por el usuario contra el pokemon rival
     	
        Habilidad ha=this.Habilidades.get(h);
-       System.out.println("\t\tSe Ha lanzado "+ha.getNombre()+" a "+p.getNombre());
-       System.out.println("\t\tLa vida de "+p.getNombre()+" a reducido "+ha.getFuerza()*ha.getDebilidad(p.getEspecie()));
-       p.quitarVida((int) (ha.getFuerza()*ha.getDebilidad(p.getEspecie())));
+       return
+       p.quitarVida((int) (ha.getFuerza()*ha.getDebilidad(p.getEspecie())))+
+               ("\t\tSe Ha lanzado "+ha.getNombre()+" a "+p.getNombre()+"\n"+"\t\tLa vida de "+p.getNombre()+" a reducido "+ha.getFuerza()*ha.getDebilidad(p.getEspecie()));
 
     }
-    public void quitarVida(int r){
+    public String quitarVida(int r){
     	//quita vida al pokemon rival
     	
         if (this.Vida-r<=0) {
             this.Vida=0;
-            System.out.println("\t\tha muerto "+this.nombre);
+            return ("\t\tha muerto "+this.nombre+"\n");
         }
         else{
             this.Vida = this.Vida - r;
+            return "";
         }
     }
     public String pokvid(){ 
