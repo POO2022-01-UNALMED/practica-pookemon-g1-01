@@ -41,7 +41,3 @@ class Entrenador():
 
 
 
-
-"""entrenador = Entrenador("david",[1,2,3],1,["kanto"])
-
-print(entrenador)"""

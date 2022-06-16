@@ -23,10 +23,5 @@ class Gimnasio():
     def setEntrenador(self, nuevo):
         self.Entrenador = nuevo
 
-E1 = EntrenadorGimnasio("miguel",[1,2,3],1,"unal",None)
-Gym = Gimnasio("unal",E1)
-E1.setGym(Gym)
 
-print(E1.getGym)
-print(Gym.getEntrenador)
 

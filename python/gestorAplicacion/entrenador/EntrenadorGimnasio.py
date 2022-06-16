@@ -19,6 +19,3 @@ class EntrenadorGimnasio(Entrenador):
         self.Gym = nuevo
 
 
-"""entrenador2 = EntrenadorGimnasio("haison",[1,2,3],1,["kanto"],"unal")
-
-print(entrenador2)"""

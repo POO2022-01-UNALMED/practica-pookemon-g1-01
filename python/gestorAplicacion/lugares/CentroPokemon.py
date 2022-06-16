@@ -18,9 +18,7 @@ class CentroPokemon():
     """metodo especial"""
 
     def CurarPokemon(self, pokemon):
-        if pokemon.getVida() < pokemon.getVidaMaxima():
-            pokemon.setVida(pokemon.getVidaMaxima())
+        if pokemon.getVida() < pokemon.getVidaMax():
+            pokemon.setVida(pokemon.getVidaMax())
         return "El Pokemon {} se ha curado".format(pokemon.getNombre())
 
-"""a = CentroPokemon()
-print(a.getNombre())"""

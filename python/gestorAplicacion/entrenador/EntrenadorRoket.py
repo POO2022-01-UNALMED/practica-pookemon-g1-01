@@ -7,7 +7,3 @@ class EntrenadorRoket(Entrenador):
 
     def __str__(self):
         return "mi nombre es {} y quiero robar tu pokemon".format(self.getNombre())
-
-"""james = EntrenadorRoket("james",[4,5,6],4)
-
-print(james)"""

@@ -3,14 +3,22 @@ from gestorAplicacion.entrenador.EntrenadorGimnasio  import EntrenadorGimnasio
 from gestorAplicacion.entrenador.EntrenadorRoket  import EntrenadorRoket
 from gestorAplicacion.lugares.Gimnasio  import Gimnasio
 from gestorAplicacion.lugares.CentroPokemon import CentroPokemon
+from gestorAplicacion.pokemon.Habilidad import Habilidad
+from gestorAplicacion.pokemon.Pokemon import Pokemon
 
-Gym = Gimnasio("ITM",None)
-
+cetro = CentroPokemon()
+Gym = Gimnasio("UNAL",None)
+pokemones = []
+pok1 = Pokemon("Ponyta")
+pok2 = Pokemon("Gyarados")
 p1 = Entrenador("david", [1,2,3],2,["betulia"])
-p2 = EntrenadorGimnasio("luisa",[4,5,6],4,["betulia"],Gym)
+p2 = EntrenadorGimnasio("haison",[4,5,6],4,["betulia"],Gym)
 Gym.setEntrenador(p2)
 p3 = EntrenadorRoket("james",[1,2,3],1)
 
 print(p1)
 print(p2)
 print(p3)
+print(pok1)
+print(pok2)
+print(cetro.CurarPokemon(pok1))
