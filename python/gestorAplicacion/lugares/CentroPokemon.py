@@ -1,4 +1,4 @@
-from pokemon.Pokemon import Pokemon
+from gestorAplicacion.pokemon.Pokemon import Pokemon
 
 class CentroPokemon():
 
@@ -22,5 +22,5 @@ class CentroPokemon():
             pokemon.setVida(pokemon.getVidaMaxima())
         return "El Pokemon {} se ha curado".format(pokemon.getNombre())
 
-a = CentroPokemon()
-print(a.getNombre())
+"""a = CentroPokemon()
+print(a.getNombre())"""

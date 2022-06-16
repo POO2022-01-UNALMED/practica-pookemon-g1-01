@@ -2,7 +2,7 @@ from gestorAplicacion.entrenador.Entrenador  import Entrenador
 from gestorAplicacion.entrenador.EntrenadorGimnasio  import EntrenadorGimnasio
 from gestorAplicacion.entrenador.EntrenadorRoket  import EntrenadorRoket
 from gestorAplicacion.lugares.Gimnasio  import Gimnasio
-#from gestorAplicacion.lugares.CentroPokemon import CentroPokemon
+from gestorAplicacion.lugares.CentroPokemon import CentroPokemon
 
 Gym = Gimnasio("ITM",None)
 

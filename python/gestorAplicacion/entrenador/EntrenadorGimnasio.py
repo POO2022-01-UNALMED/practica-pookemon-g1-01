@@ -9,7 +9,7 @@ class EntrenadorGimnasio(Entrenador):
         self.Gym = Gym
     
     def __str__(self):
-        return super().__str__() + " soy entrenador de {}".format(self.Gym)
+        return super().__str__() + " soy entrenador de {}".format(self.Gym.getNombre())
 
     #### get y set #### 
     def getGym(self):
