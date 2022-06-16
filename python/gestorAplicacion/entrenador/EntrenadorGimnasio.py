@@ -1,5 +1,5 @@
 
-from Entrenador import Entrenador
+from gestorAplicacion.entrenador.Entrenador import Entrenador
 
 
 class EntrenadorGimnasio(Entrenador):

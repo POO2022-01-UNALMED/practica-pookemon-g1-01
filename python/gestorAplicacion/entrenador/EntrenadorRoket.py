@@ -1,9 +1,8 @@
-from sqlalchemy import null
-from Entrenador import Entrenador
+from gestorAplicacion.entrenador.Entrenador import Entrenador
 
 class EntrenadorRoket(Entrenador):
 
-    def __init__(self, Nombre, ListaPokemon, pokemonInicial,Medellas = null):
+    def __init__(self, Nombre, ListaPokemon, pokemonInicial,Medellas = None):
         super().__init__(Nombre, ListaPokemon, pokemonInicial,Medellas)
 
     def __str__(self):

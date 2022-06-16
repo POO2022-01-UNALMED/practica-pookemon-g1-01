@@ -1,6 +1,6 @@
 
 
-from entrenador.EntrenadorGimnasio import EntrenadorGimnasio
+from gestorAplicacion.entrenador.EntrenadorGimnasio import EntrenadorGimnasio
 
 
 class Gimnasio():
