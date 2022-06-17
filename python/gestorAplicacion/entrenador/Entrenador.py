@@ -3,40 +3,40 @@
 class Entrenador():
     
     def __init__(self,Nombre, ListaPokemon,pokemonInicial, Medellas):
-        self.Nombre = Nombre
-        self.ListaPokemon = ListaPokemon
-        self.pokemonInicial = pokemonInicial
-        self.Medellas = Medellas
+        self._Nombre = Nombre
+        self._ListaPokemon = ListaPokemon
+        self._pokemonInicial = pokemonInicial
+        self._Medellas = Medellas
 
     def __str__(self):
-        return "hola, mi nombre es {},que tal?".format(self.Nombre)
+        return "hola, mi nombre es {},que tal?".format(self._Nombre)
 
 
     #### getter ####
     def getNombre(self):
-        return self.Nombre
+        return self._Nombre
 
     def getListaPokemon(self):
-        return self.ListaPokemon
+        return self._ListaPokemon
     
     def getPokemonInicial(self):
-        return self.pokemonInicial #objeto pokemon
+        return self._pokemonInicial #objeto pokemon
     
     def getMedallas(self):
-        return self.Medellas 
+        return self._Medellas 
 
     #### setter ####
     def setNombre(self, nuevo):
-        self.Nombre = nuevo
+        self._Nombre = nuevo
 
     def setListaPokemon(self, nuevo):
-        self.ListaPokemon = nuevo
+        self._ListaPokemon = nuevo
     
     def setPokemonInicial(self, nuevo):
-        self.pokemonInicial = nuevo #objeto pokemon
+        self._pokemonInicial = nuevo #objeto pokemon
     
     def setMedallas(self, nuevo):
-        self.Medellas = nuevo 
+        self._Medellas = nuevo 
 
 
 

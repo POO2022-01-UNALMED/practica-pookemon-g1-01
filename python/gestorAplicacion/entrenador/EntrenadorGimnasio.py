@@ -6,16 +6,16 @@ class EntrenadorGimnasio(Entrenador):
 
     def __init__(self, Nombre, ListaPokemon, pokemonInicial, Medellas, Gym):
         super().__init__(Nombre, ListaPokemon, pokemonInicial, Medellas)
-        self.Gym = Gym
+        self._Gym = Gym
     
     def __str__(self):
-        return super().__str__() + " soy entrenador de {}".format(self.Gym.getNombre())
+        return super().__str__() + " soy entrenador de {}".format(self._Gym.getNombre())
 
     #### get y set #### 
     def getGym(self):
-        return self.Gym
+        return self._Gym
 
     def setGym(self, nuevo):
-        self.Gym = nuevo
+        self._Gym = nuevo
 
 

@@ -2,10 +2,10 @@ from gestorAplicacion.pokemon.Pokemon import Pokemon
 
 class CentroPokemon():
 
-    nombre = "50A"
+    _nombre = "50A"
 
     def __init__(self):
-        self.nombre 
+        self._nombre 
 
     def __str__(self) -> str:
         return "hola, curaremos a tu pokemon"
@@ -13,7 +13,7 @@ class CentroPokemon():
     """get """
 
     def getNombre(self):
-        return self.nombre
+        return self._nombre
 
     """metodo especial"""
 
