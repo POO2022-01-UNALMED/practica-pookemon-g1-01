@@ -3,8 +3,10 @@ from gestorAplicacion.entrenador.EntrenadorGimnasio  import EntrenadorGimnasio
 from gestorAplicacion.entrenador.EntrenadorRoket  import EntrenadorRoket
 from gestorAplicacion.lugares.Gimnasio  import Gimnasio
 from gestorAplicacion.lugares.CentroPokemon import CentroPokemon
+from gestorAplicacion.lugares.CampoDeBatalla import CampoDeBatalla
 from gestorAplicacion.pokemon.Habilidad import Habilidad
 from gestorAplicacion.pokemon.Pokemon import Pokemon
+
 
 cetro = CentroPokemon()
 Gym = Gimnasio("UNAL",None)

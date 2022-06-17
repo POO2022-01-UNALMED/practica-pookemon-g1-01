@@ -1,16 +1,26 @@
-#from pokemon.Pokemon import Pokemon
+from gestorAplicacion.entrenador.EntrenadorGimnasio import EntrenadorGimnasio
+from gestorAplicacion.entrenador.EntrenadorRoket import EntrenadorRoket
+from gestorAplicacion.pokemon.Pokemon import Pokemon
+from gestorAplicacion.pokemon.Habilidad import Habilidad
 
 class Entrenador():
+
+    _entrenadores = []
     
     def __init__(self,Nombre, ListaPokemon,pokemonInicial, Medellas):
         self._Nombre = Nombre
         self._ListaPokemon = ListaPokemon
         self._pokemonInicial = pokemonInicial
         self._Medellas = Medellas
+        if (isinstance(self,EntrenadorGimnasio) == False) and (isinstance(self,EntrenadorRoket) == False):
+            Entrenador._entrenadores.append(self)
 
     def __str__(self):
-        return "hola, mi nombre es {},que tal?".format(self._Nombre)
+        return "Nombre: {}\nPokemon Inicial: {}\nMedallas: {}".format(self.getNombre,self.getPokemonInicial,self.getMedallas)
 
+    @classmethod
+    def getEntrenadores(cls):
+        return cls._entrenadores
 
     #### getter ####
     def getNombre(self):
