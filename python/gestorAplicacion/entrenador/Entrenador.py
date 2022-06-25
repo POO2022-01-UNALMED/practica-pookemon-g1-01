@@ -1,5 +1,4 @@
-from gestorAplicacion.entrenador.EntrenadorGimnasio import EntrenadorGimnasio
-from gestorAplicacion.entrenador.EntrenadorRoket import EntrenadorRoket
+
 from gestorAplicacion.pokemon.Pokemon import Pokemon
 from gestorAplicacion.pokemon.Habilidad import Habilidad
 
@@ -8,6 +7,8 @@ class Entrenador():
     _entrenadores = []
     
     def __init__(self,Nombre, ListaPokemon,pokemonInicial, Medellas):
+        from gestorAplicacion.entrenador.EntrenadorGimnasio import EntrenadorGimnasio
+        from gestorAplicacion.entrenador.EntrenadorRoket import EntrenadorRoket
         self._Nombre = Nombre
         self._ListaPokemon = ListaPokemon
         self._pokemonInicial = pokemonInicial

@@ -6,22 +6,72 @@ from gestorAplicacion.lugares.CentroPokemon import CentroPokemon
 from gestorAplicacion.lugares.CampoDeBatalla import CampoDeBatalla
 from gestorAplicacion.pokemon.Habilidad import Habilidad
 from gestorAplicacion.pokemon.Pokemon import Pokemon
+from basesDatos.deserializador import Deserializador
+from basesDatos.serializador import Serializador
+import random
 
 
-cetro = CentroPokemon()
-Gym = Gimnasio("UNAL",None)
-pokemones = []
-pok1 = Pokemon("Ponyta")
-pok2 = Pokemon("Gyarados")
-p1 = Entrenador("david", [1,2,3],2,["betulia"])
-p2 = EntrenadorGimnasio("haison",[4,5,6],4,["betulia"],Gym)
-Gym.setEntrenador(p2)
-p3 = EntrenadorRoket("james",[1,2,3],1)
-pok1.quitarVida(100)
-print(p1)
-print(p2)
-print(p3)
-print(pok1)
-print(pok2)
-print(cetro.CurarPokemon(pok1))
-print(pok1)
+class POOkemon():
+
+    _lista_Pokemon = []
+    _Roket = EntrenadorRoket(None,None,None)
+    _Gym = Gimnasio("UNALMED",None)
+    _Centro_Pokemo = CentroPokemon()
+    _Campo_Batalla = CampoDeBatalla()
+    
+
+    @classmethod
+    def generar_lista(cls):
+        cls._lista_Pokemon = []
+        cls._lista_Pokemon.append(Pokemon("Pikachu"))
+        cls._lista_Pokemon.append(Pokemon("Electrode"))
+        cls._lista_Pokemon.append(Pokemon("Voltorb"))
+        cls._lista_Pokemon.append(Pokemon("Squirtle"))
+        cls._lista_Pokemon.append(Pokemon("Gyarados"))
+        cls._lista_Pokemon.append(Pokemon("Tentacool"))
+        cls._lista_Pokemon.append(Pokemon("Charmander"))
+        cls._lista_Pokemon.append(Pokemon("Ponyta"))
+        cls._lista_Pokemon.append(Pokemon("Magmar"))
+        cls._lista_Pokemon.append(Pokemon("Gastly"))
+        cls._lista_Pokemon.append(Pokemon("Ekans"))
+        cls._lista_Pokemon.append(Pokemon("Muk"))
+        cls._lista_Pokemon.append(Pokemon("Bulbasur"))
+        cls._lista_Pokemon.append(Pokemon("Gloom"))
+        cls._lista_Pokemon.append(Pokemon("Venusaur"))
+        return cls._lista_Pokemon
+
+    @classmethod
+    def Pokemon_rival(cls):
+        return random.choice(cls._lista_Pokemon)
+
+    @classmethod
+    def Crear_Etrenador(cls):
+        nombre = input("ingrese su nombre: ")
+        a = "si"
+        medalla = []
+        while a == "si" or a == "Si":
+            medalla.append(input("ingrese su medalla: "))
+            a = input("tiene mas medallas?  ")
+        
+        
+        print("ingrese Si, si quiere pertenecer a un gimnasio, de lo contrario, igrese No")
+        desicion = input()
+        if desicion == "Si" or desicion == "si":
+            jugador = EntrenadorGimnasio(nombre,cls.generar_lista(),random.choice(cls._lista_Pokemon),medalla,cls._Gym)
+            cls._Gym.setEntrenador(jugador)
+            return jugador
+        else:
+            jugador = Entrenador(nombre,cls.generar_lista(),random.choice(cls._lista_Pokemon),medalla)
+            return jugador
+
+    @classmethod
+    def crear_rivalRoket(cls):
+        cls._Roket.setNombre("james me me mes")
+        cls._Roket.setListaPokemon(cls.generar_lista())
+        cls._Roket.setPokemonInicial(random.choice(cls._Roket.getListaPokemon))
+
+    @classmethod
+    def leer_Entrenadores(cls):
+        lista = Deserializador.deserializarTodo()
+        return lista
+
