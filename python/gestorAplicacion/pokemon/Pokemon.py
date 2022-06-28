@@ -180,7 +180,7 @@ class Pokemon():
             return "ha muerto " + self._nombre
         else:
             self._vida -= r
-            return ""
+            return "se le ha quitado "+str(r)+" vida a "+self._nombre
 
     def pokvid(self):
         return self._nombre + " vida: " + self._vida
