@@ -67,7 +67,7 @@ class Habilidad():
             self._tipo = "Electrico"
             self._Fuerza = 41
             self._Debilidades["Fuego"] = 1.5
-        if self._Nombre == "teco shock":
+        if self._Nombre == "tecnon shock":
             self._tipo = "Electrico"
             self._Fuerza = 60
             self._Debilidades["Fuego"] = 1.5

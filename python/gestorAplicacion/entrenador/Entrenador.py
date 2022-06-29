@@ -6,13 +6,13 @@ class Entrenador():
 
     _entrenadores = []
     
-    def __init__(self,Nombre, ListaPokemon,pokemonInicial, Medellas):
+    def __init__(self,Nombre,pokemonInicial, Medellas=None, ListaPokemon=None):
         from gestorAplicacion.entrenador.EntrenadorGimnasio import EntrenadorGimnasio
         from gestorAplicacion.entrenador.EntrenadorRoket import EntrenadorRoket
         self._Nombre = Nombre
-        self._ListaPokemon = ListaPokemon
+        #self._ListaPokemon = ListaPokemon
         self._pokemonInicial = pokemonInicial
-        self._Medellas = Medellas
+        #self._Medellas = Medellas
         if (isinstance(self,EntrenadorGimnasio) == False) and (isinstance(self,EntrenadorRoket) == False):
             Entrenador._entrenadores.append(self)
 

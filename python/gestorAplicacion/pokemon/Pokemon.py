@@ -3,7 +3,7 @@ from gestorAplicacion.pokemon.Habilidad import Habilidad
 
 class Pokemon():
 
-    def __init__(self, nombre, bot=None):
+    def __init__(self, nombre: object, bot: object = None) -> object:
         self._nombre = nombre
         self._bot = False
         self._especie = None
@@ -23,7 +23,6 @@ class Pokemon():
             self._habilidades.append(Habilidad("impactrueno"))
             self._vida = 200
             self._vidaMaxima = 200
-        
         if self._nombre == "Electrode":
             self._especie = "Electrico"
             self._nivelMaximo = 100
@@ -33,7 +32,6 @@ class Pokemon():
             self._habilidades.append(Habilidad("chispa"))
             self._vida = 200
             self._vidaMaxima = 200
-
         if self._nombre == "Voltrob":
             self._especie = "Electrico"
             self._nivelMaximo = 100
@@ -42,7 +40,7 @@ class Pokemon():
             self._habilidades.append(Habilidad("puño trueno"))
             self._habilidades.append(Habilidad("rayo"))
             self._vida = 200
-            
+            self._vidaMaxima = 200
         #Pokemones acuaticos
         if self._nombre == "Squirtle":
             self._especie = "Agua"
@@ -53,7 +51,6 @@ class Pokemon():
             self._habilidades.append(Habilidad("cascada"))
             self._vida = 400
             self._vidaMaxima = 400
-
         if self._nombre == "Gyarados":
             self._especie = "Agua"
             self._nivelMaximo = 100
@@ -63,7 +60,6 @@ class Pokemon():
             self._habilidades.append(Habilidad("hidropulzo"))
             self._vida = 200
             self._vidaMaxima = 200
-        
         if self._nombre == "Tentacool":
             self._especie = "Agua"
             self._nivelMaximo = 100
@@ -73,7 +69,6 @@ class Pokemon():
             self._habilidades.append(Habilidad("salmuera"))
             self._vida = 200
             self._vidaMaxima = 200
-        
         # Pokemones de fuego
         if self._nombre == "Charmander":
             self._especie = "Fuego"
@@ -102,7 +97,6 @@ class Pokemon():
             self._habilidades.append(Habilidad("lanzallamas"))
             self._vida = 200
             self._vidaMaxima = 200
-        
         #Pokemoes Venenosos
         if self._nombre == "Gastly":
             self._especie = "Veneno"
@@ -132,7 +126,6 @@ class Pokemon():
             self._habilidades.append(Habilidad("lanzamugre"))
             self._vida = 300
             self._vidaMaxima = 300
-
         #pokemoes planta
         if self._nombre == "Bulbasur":
             self._especie = "Planta"

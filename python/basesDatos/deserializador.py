@@ -33,7 +33,7 @@ class Deserializador():
         return lista
         # Cierro el archivo
     
-    def deserializarTodo():
+    def deserializarTodo(cls):
         Entrenador._entrenadores = Deserializador.deserializar(Entrenador._entrenadores, "Entrenadores")
         EntrenadorGimnasio._entrenadoresGym = Deserializador.deserializar(EntrenadorGimnasio._entrenadoresGym, "Entrenadores_de_Gym")
         EntrenadorRoket._entrenadoresRoket = Deserializador.deserializar(EntrenadorRoket._entrenadoresRoket, "Entrenadores_Roket")

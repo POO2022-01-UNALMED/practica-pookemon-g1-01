@@ -29,7 +29,7 @@ class Serializador():
         except:
             print("paila tuqui tuqui muñeco")
 
-    def serializarTodo():
+    def serializarTodo(cls):
 
         Serializador.serializar(Entrenador.getEntrenadores(), "Entrenadores")
         Serializador.serializar(EntrenadorGimnasio.getEntrenadoresGym(), "Entrenadores_de_Gym")

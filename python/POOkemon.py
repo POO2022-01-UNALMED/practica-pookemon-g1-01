@@ -80,10 +80,9 @@ class POOkemon():
 global turno
 import tkinter as tk
 import tkinter.messagebox as messagebox
+from tkinter import ttk
 import random
 
-pok1= Pokemon("Ponyta")
-pok2= Pokemon("Gyarados")
 
 def contrataque():
     global pok2
@@ -204,6 +203,10 @@ def irBatalla():
     global labelvp1
     global labelvp2
     global windowbatalla
+    if  pok1==None:
+        tk.messagebox.showinfo(message="No tienes pokemones para luchar", title="Titulo")
+        return
+
     windowbatalla = tk.Toplevel(app)
     frame = tk.Frame(master=windowbatalla, width=450, height=450, bg="white")
     frame.pack()
@@ -229,7 +232,7 @@ def irBatalla():
     boton1.place(x=0, y=120)
 
     h2 = pok1.getHabilidades()[1]
-    boton1 = tk.Button(master=frame,text=h2.getNombre(), command=btlh1)
+    boton1 = tk.Button(master=frame,text=h2.getNombre(), command=btlh2)
     boton1.place(x=0, y=180)
 
     h3 = pok1.getHabilidades()[2]
@@ -243,6 +246,9 @@ def curarpokemones():
     global pok2
     global labelvp2c
     global labelvp1c
+    if  pok1==None:
+        tk.messagebox.showinfo(message="No tienes pokemones para luchar", title="Titulo")
+        return
     pok1.setVida(pok1.getVidaMax())
     pok2.setVida(pok2.getVidaMax())
     tk.messagebox.showinfo(message="Los pokemones se han recuperado!", title="Titulo")
@@ -255,6 +261,9 @@ def ircentropokemon():
     global pok2
     global labelvp2c
     global labelvp1c
+    if pok1 == None:
+        tk.messagebox.showinfo(message="No tienes pokemones para curar", title="Titulo")
+        return
     windowcentropokemon = tk.Toplevel(app)
     frame = tk.Frame(master=windowcentropokemon, width=450, height=450, bg="white")
     frame.pack()
@@ -275,6 +284,164 @@ def ircentropokemon():
     boton1 = tk.Button(master=frame,text="Curar Pokemones", command=curarpokemones, font=("Arial", 15))
     boton1.place(x=110, y=80)
 
+def envien():
+    global pok1
+    print(entradanombre.get())
+    nombre=entradanombre.get()
+    print(combo.get())
+    nombrepokemon=combo.get()
+    print(combo1.get())
+    tk.messagebox.showinfo(message=f"Hola {entradanombre.get()}, hemos creado tu entrenador, Tienes de pokemon principal {combo.get()}", title="Entrenador creado")
+    windowcentren.destroy()
+    #a
+    print("r")
+    entrenadori= Entrenador(nombre,Pokemon(nombrepokemon))
+    print(combo.get)
+    entrenadori.getPokemonInicial()
+    s.serializarTodo()
+
+def ircrearentrenador():
+    global s
+    global pok1
+    global pok2
+    global labelvp2c
+    global labelvp1c
+    global lipok
+
+    global entradanombre
+    global combo
+    global combo1
+    global windowcentren
+    windowcentren = tk.Toplevel(app)
+    frame = tk.Frame(master=windowcentren, width=450, height=450, bg="white")
+    frame.pack()
+
+    labelnp1 = tk.Label(master=frame, text="Crear Entrenador", bg="gray", font=("Arial", 15))
+    labelnp1.place(x=0, y=40)
+
+    labelnp1 = tk.Label(master=frame, text="Nombre",bg='white',fg='black',font=("Arial", 10))
+    labelnp1.place(x=0, y=80)
+
+    entradanombre = tk.Entry(frame,bg='white',fg='black')
+    entradanombre.place(x=130, y=80)
+
+
+    labelnp1 = tk.Label(master=frame, text="Pokemon Principal",bg='white',fg='black', font=("Arial", 10))
+    labelnp1.place(x=0, y=120)
+
+    combo = ttk.Combobox(master=frame,values=lipok,state='readonly')
+    #combo.bind("<<ComboboxSelected>>") #Evento
+    combo.place(x=130, y=120)
+
+    labelnp1 = tk.Label(master=frame, text="Genero", bg='white', fg='black', font=("Arial", 10))
+    labelnp1.place(x=0, y=160)
+
+    combo1 = ttk.Combobox(master=frame, values=["M", "F"], state='readonly')
+    combo1.place(x=130, y=160)
+
+    botonce= tk.Button(frame, text="Crear", command=envien)
+    botonce.place(x=130, y=260)
+    pass
+
+
+def botonee1():
+    global pok1
+    botonref=0
+    pok1=Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial()
+    tk.messagebox.showinfo(message=f"Se ha seleccionado {Entrenador.getEntrenadores()[::-1][:5][botonref].getNombre()} con {Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial().getNombre()}", title="pokemon")
+    windowelen.destroy()
+def botonee2():
+    global pok1
+    botonref=1
+    pok1=Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial()
+    tk.messagebox.showinfo(message=f"Se ha seleccionado {Entrenador.getEntrenadores()[::-1][:5][botonref].getNombre()} con {Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial().getNombre()}", title="pokemon")
+    windowelen.destroy()
+def botonee3():
+    global pok1
+    botonref=2
+    pok1=Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial()
+    tk.messagebox.showinfo(message=f"Se ha seleccionado {Entrenador.getEntrenadores()[::-1][:5][botonref].getNombre()} con {Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial().getNombre()}", title="pokemon")
+    windowelen.destroy()
+def botonee4():
+    global pok1
+    botonref=3
+    pok1=Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial()
+    tk.messagebox.showinfo(message=f"Se ha seleccionado {Entrenador.getEntrenadores()[::-1][:5][botonref].getNombre()} con {Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial().getNombre()}", title="pokemon")
+    windowelen.destroy()
+def botonee5():
+    global pok1
+    botonref=4
+    pok1=Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial()
+    tk.messagebox.showinfo(message=f"Se ha seleccionado {Entrenador.getEntrenadores()[::-1][:5][botonref].getNombre()} con {Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial().getNombre()}", title="pokemon")
+    windowelen.destroy()
+def botonee6():
+    global pok1
+    botonref=5
+    pok1=Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial()
+    tk.messagebox.showinfo(message=f"Se ha seleccionado {Entrenador.getEntrenadores()[::-1][:5][botonref].getNombre()} con {Entrenador.getEntrenadores()[::-1][:5][botonref].getPokemonInicial().getNombre()}", title="pokemon")
+    windowelen.destroy()
+
+def irelegirentrenador():
+    global s
+    global pok1
+    global pok2
+    global labelvp2c
+    global labelvp1c
+    global lipok
+    global botoncin
+
+    global entradanombre
+    global combo
+    global combo1
+    global ds
+    global windowelen
+    windowelen = tk.Toplevel(app)
+    frame = tk.Frame(master=windowelen, width=450, height=450, bg="white")
+    frame.pack()
+
+    labelnp1 = tk.Label(master=frame, text="Elegir Entrenador", bg="gray", font=("Arial", 15))
+    labelnp1.place(x=0, y=40)
+
+    ds.deserializarTodo()
+    r=0
+    listabotones=[botonee1,botonee2,botonee3,botonee4,botonee5,botonee6]
+    c=0
+    for i in Entrenador.getEntrenadores()[::-1][:5]:
+        r+=60
+
+        labelnp1 = tk.Label(master=frame, text="Nombre",bg='white',fg='black',font="Arial 12 bold")
+        labelnp1.place(x=0, y=20+r)
+        labelnp1 = tk.Label(master=frame, text=i.getNombre(),bg='white',fg='black',font=("Arial", 10))
+        labelnp1.place(x=100, y=20+r)
+
+        labelnp1 = tk.Label(master=frame, text="Pokemon", bg='white', fg='black', font="Arial 10 bold")
+        labelnp1.place(x=5, y=40+r)
+        labelnp1 = tk.Label(master=frame, text=i.getPokemonInicial().getNombre(), bg='white', fg='black', font=("Arial", 10))
+        labelnp1.place(x=100, y=40+r)
+        print(i.getPokemonInicial())
+
+        botoncee1 = tk.Button(frame, text=f"Elegir", command=listabotones[c])
+        botoncee1.place(x=180, y=20+r)
+
+        c+=1
+
+    #botoncee1 = tk.Button(frame, text=f"Elegir", command=botonee1)
+    #botoncee1.place(x=180, y=20+60)
+
+    #botoncee1 = tk.Button(frame, text=f"Elegir {i.getNombre()}", command=botonee2())
+    #botoncee2.place(x=180, y=20+60*2)
+    pass
+
+
+#pok1= Pokemon("Ponyta")
+#pok2= Pokemon("Gyarados")
+s=Serializador()
+ds=Deserializador()
+print(Entrenador.getEntrenadores())
+lipok=["Pikachu","Electrode","Voltrob","Squirtle","Gyarados","Tentacool","Charmander","Ponyta","Magmar","Gastly","Ekans","Muk","Bulbasur","Gloom","Venusaur"]
+pok1=None
+#pok1=Pokemon(random.choice(lipok))
+pok2=Pokemon(random.choice(lipok))
 
 app = tk.Tk()
 frameprincipal = tk.Frame(master=app, width=450, height=450, bg="white")
@@ -287,6 +454,12 @@ botonbatalla.place(x=170, y=200)
 botoncentropokemon=tk.Button(master=frameprincipal,text="centro pokemon",command=ircentropokemon)
 botoncentropokemon.place(x=146, y=250)
 
+botoncrearpokemon=tk.Button(master=frameprincipal,text="Crear Entrenador",command=ircrearentrenador)
+botoncrearpokemon.place(x=146, y=300)
+
+
+botonelegirEntrenador=tk.Button(master=frameprincipal,text="Elegir Entrenador",command=irelegirentrenador)
+botonelegirEntrenador.place(x=146, y=350)
 
 app.mainloop()
 
